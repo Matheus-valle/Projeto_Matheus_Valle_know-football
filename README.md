@@ -1,2 +1,2 @@
 # Projeto_Matheus_Valle_know-football
-Projeto individual desenvolvido pelo Matheus de Souza Valle
+Projeto individual desenvolvido por Matheus de Souza Valle
