@@ -38,7 +38,8 @@
         <input id="input_email"  type="text"><br>
         <p>  Senha</p>
         <input  id="input_senha"  type="password"><br><br>
-        <button class="botao_cadastro_login">ENTRAR</button>
+        <button class="botao_cadastro_login" onclick="entrar()">ENTRAR</button>
+        <div id="div_mensagemErro"></div>
 
 
 
@@ -58,3 +59,17 @@
     </footer>
 </body>
 </html>
+<script>
+    function entrar(){
+        var email = input_email.value
+        var senha = input_senha.value
+
+        if (email == "admin@gmail.com" && senha == "storm1234") {
+            alert("acesso liberado")
+        } else  {
+            div_mensagemErro.innerHTML = `<b style="color: red;">EMAIL OU SENHA ERRADA!</b>` 
+        }
+
+    }
+    
+</script>
