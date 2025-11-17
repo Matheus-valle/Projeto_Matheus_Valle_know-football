@@ -1,0 +1,345 @@
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #445056;
+    font-family: "Lilita One", sans-serif;
+}
+
+header {
+    height: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header img {
+    height: 120px;
+    width: 140px;
+}
+
+.mensagem_usuario {
+    background-color: #0B9FEB;
+    color: white;
+    width: 1000px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.formulario_continuação {
+    background-color: #0E2C61;
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    height: 1300px;
+}
+
+.formulario_continuação  .continuação{
+    background-color: white;
+    margin: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 1150px;
+
+    padding: 40px;
+
+
+}
+
+
+
+.div_drills .titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0B9FEB;
+
+}
+
+
+
+.continuação .altura_peso {
+
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 500px;
+    font-size: 20px;
+    align-items: center;
+}
+
+
+.continuação .altura_peso input {
+    border: 7px solid #2A7FE8;
+}
+
+.continuação .altura_peso  input{
+    height: 50px;
+    width: 200px;
+    color:  #0E2C61;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.altura_peso .altura {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.altura_peso .peso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.continuação .região_frequencia {
+   
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    gap: 20px;
+}
+
+.região_frequencia  .regiao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    
+}
+
+.regiao select {
+    border: 7px solid #2A7FE8;
+    height: 60px;
+    width: 465px;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+
+.região_frequencia  .frequencia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    
+}
+
+.frequencia input {
+    border: 7px solid #2A7FE8;
+    height: 60px;
+    width: 450px;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.continuação .inicio {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+
+.continuação .div_drills {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 850px;
+    gap: 40px;
+    width: 900px;
+}
+
+.tiro_3_cone {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 500px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.tiro_3_cone a {
+    font-size: 12px;
+    font-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.tiro_3_cone input {
+    border: 7px solid #2A7FE8;
+}
+
+.tiro_3_cone  input{
+    height: 50px;
+    width: 400px;
+    color:  #0E2C61;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+
+
+.shuttle-60yard {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 500px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.shuttle-60yard a {
+    font-size: 12px;
+    font-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.shuttle-60yard input {
+    border: 7px solid #2A7FE8;
+}
+
+.shuttle-60yard  input{
+    height: 50px;
+    width: 400px;
+    color:  #0E2C61;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+.tiro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cone-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shuttle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.supino {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.supino p{
+    font-size: 20px;
+}
+
+.supino b{
+    font-size: 10px;
+}
+
+
+.supino input {
+    border: 7px solid #2A7FE8;
+}
+
+.supino  input{
+    height: 50px;
+    width: 400px;
+    color:  #0E2C61;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.div_botao button {
+       background-color: #0E2C61;
+    color: white;
+    font-family: "Lilita One", sans-serif;
+    font-size: 40px;
+    height: 70px;
+    width: 280px;
+    border: 7px solid #8AD9FF;
+    border-radius: 20px;
+
+}
+
+.titulo_drills {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
