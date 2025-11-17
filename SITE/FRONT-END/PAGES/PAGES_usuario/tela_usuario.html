@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <title>tela home</title>
 </head>
-<body>
+<body onload="visualizar()">
     <header>
         <div class="logo">
             <img src="../../IMGs/LOGO-removebg-preview.png" alt="img">
@@ -89,11 +89,11 @@
                 <div class="botões_registro">
                      <div class="botão01">
                         <p>CADASTRAR:</p>
-                        <button>CADASTRO</button>
+                        <button onclick="cadastrar()">CADASTRO</button>
                     </div>
                     <div class="input2">
                         <p>EDITAR:</p>
-                        <button>EDITAR</button>
+                        <button onclick="editar()">EDITAR</button>
                     </div>
                 </div>
              </div>
@@ -105,8 +105,57 @@
 </html>
 
 <script>
-  const ctx = document.getElementById('myChart');
+    var mes = 0
+    var tempo = 0
 
+    var mes1 
+    var mes2 
+    var mes3 
+    var mes4 
+    var mes5 
+    var mes6 
+
+    function cadastrar() {
+        console.log("clicou")
+        mes = Number(Input_mes.value)
+        tempo = Number(input_tempo.value)
+
+        if(mes == 1) {
+            mes1 = tempo
+        }
+
+        if(mes == 2 ){
+            mes2 = tempo
+            console.log("foi")
+        }
+        if(mes == 3) {
+            mes3 = tempo
+        }
+
+        if(mes == 4) {
+            mes4 = tempo
+        }
+
+        if(mes == 5){
+            mes5 = tempo
+        }
+
+        if (mes == 6) {
+            mes6 == tempo
+        }
+
+
+    }
+
+    function editar(){
+
+    }
+
+
+    function visualizar(){
+
+  const ctx = document.getElementById('myChart');
+    console.log(mes2)
   new Chart(ctx, {
     type: 'line',
     data: {
@@ -118,7 +167,7 @@
       },
      {
         label: 'Em andamento',
-        data:[6.00, 6.01, 6.02, 6.04, 6.04, 6.07, 8.10 ]
+        data:[6.00, mes1, mes2, mes3, mes4, mes5, mes6]
      }]
     },
     options: {
@@ -129,5 +178,7 @@
       }
     }
   });
+
+} 
 </script>
  

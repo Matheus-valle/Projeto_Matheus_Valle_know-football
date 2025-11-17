@@ -26,6 +26,11 @@ header {
     
 }
 
+
+header a{
+    text-decoration: none;
+    color: #0E2C61;
+}
 .logo {
     height: 150px;
     width: 150px;

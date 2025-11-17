@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../STYLE/style.css">
-    ç<link rel="stylesheet" href="../STYLE/cadastro.css">
+    <link rel="stylesheet" href="../STYLE/cadastro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
@@ -16,16 +16,16 @@
         <div class="header_textos">
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li>REGRAS</li>
-                <li>PAPÉIS</li>
-                <li>FORMAÇÕES</li>
-                <li>EQUIPAMENTOS</li>
+                <li><a href="Regras.html">REGRAS</a></li>
+                <li><a href="Papéis.html">PAPÉIS</a></li>
+                <li><a href="Formações.html">FORMAÇÕES</a></li>
+                <li><a href="Equipamentos.html">EQUIPAMENTOS</a></li>
             </ul>
             <div class="botão_login_registro">
-                LOGIN
+               <a  style="color: white; font-size: 20px; align-items: center;" href="./Login.html">LOGIN</a>
             </div>
             <div class="botão_login_registro">
-                REGISTRO
+               <a  style="color: white; font-size: 20px; align-items: center;" href="./Registro.html">REGISTRO</a>
             </div>
         </div>
     </header>
@@ -72,29 +72,33 @@
         var senha = input_senha.value
         var confirmar_senhha = input_confirmarSenha.value
         var mensagem = ""
-
+        var contador_validações = 0
         var temMaiuscula = 0
         var temMinuscula = 0
         var temnumero = 0
         if (nome == "" || email == "" || senha == "" || confirmar_senhha == "") {
             mensagem += 'Não podem conter campos vazios! <br>'
+            contador_validações++
         }
 
         
 
         if (senha != confirmar_senhha) {
             mensagem += 'senha não conrresponde ao confirmar senha'
-        }
+            contador_validações++
+        } 
         console.log(data)
         if (data  >= '2009') {
             mensagem += 'Data de nascimento não inserida corretamente ou usuario menor de 16 anos <br>'
+            contador_validações++
         }
 
         if (email.includes('@') == false) {
             mensagem += 'Endereço de email invalido <br>'
-        }
+            contador_validações++
+        } 
 
-        if(senha.length <= 8 || senha.includes(''))
+   
 
         for(i = 0; i <= senha.length; i++) {
             var senha_momento = senha[i]
@@ -112,16 +116,27 @@
 
         if(temMaiuscula == 0) {
             mensagem += 'Senha não possui  letra maiscula <br>'
-        }
+            contador_validações++
+        } 
 
         if(temMinuscula == 0) {
             mensagem += 'Senha não possui letra minuscula <br>'
-        }
+            contador_validações++
+        } 
 
         if(temnumero == 0) {
             mensagem += 'Senha não possui numero <br>'
-        }
+             contador_validações++ 
+        } 
+           
+        
 
-        div_erro.innerHTML = `<b>${mensagem}</b>` 
+        div_erro.innerHTML = `<b>${mensagem}</b>`
+        console.log(contador_validações)
+        if (contador_validações == 0) {
+            window.location.href = "../PAGES/PAGES_usuario/continuação_cadastro.html";
+
+        }
     }
 </script>
+
