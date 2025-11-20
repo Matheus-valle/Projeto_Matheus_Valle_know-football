@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../STYLE/continuação_c.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <title>Continuação Cadastro</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../../IMGs/LOGO-removebg-preview.png" alt="img">
+        </div>
+        <div class="mensagem_usuario">
+            <h1>CONTINUE SEU CADASTRO!</h1>
+        </div>
+    </header>
+    <a href="../index.html"><button>CANCELAR CADASTRO</button></a>
+    <div class="formulario_continuação">
+        <div class="continuação">
+        <div class="inicio">
+            <div class="titulo">
+                <h1>Para começarmos precisamos de dados simples  para uma melhor </h1> 
+                <h1> na plataforma</h1>
+                <br>
+                <br>
+            </div>
+            <div class="altura_peso">
+                <div class="altura">
+                    <p>Digite sua altura</p>
+                    <input type="number" id="input_altura">
+                </div>
+                <div class="peso">
+                    <p>Digite seu peso em kg</p> 
+                    <input type="number" id="input_altura">
+                </div>
+            </div>
+            <div class="região_frequencia">
+                <div class="regiao">
+                    <p>Selecione sua região do Brasil</p>
+                    <select  id="região_brasil">
+                        <option value="#">Selecione uma região</option>
+                        <option value="norte">Norte</option>
+                        <option value="Nordeste">Nordeste</option>
+                        <option value="Centroeste">Centroeste</option>
+                        <option value="Suldeste">Suldeste</option>
+                        <option value="Sul">Sul</option>
+                    </select>
+                </div>
+                <div class="frequencia">
+                    <p>Digite sua frequencia de treino fisico na semana</p>
+                    <input type="number" id="frequencia" maxlength="7">
+                    <p style="font-size: 12px;">OBS:(Se você não treina</p>
+                    <p style="font-size: 12px;">infelizmente não podemos continuar com o cadastro)</p>
+                </div>
+            </div>
+        </div>
+            <div class="div_drills">
+                <div class="titulo_drills">
+                    <p>Nesta proxima parte precisamos que você tire  ou coloque</p> 
+                    <p> valores aproximados dos drills acima</p>
+                </div>
+                <div class="tiro_3_cone">
+                    <div class="tiro">
+                        <p>Tiro de 40y (36 mêtros)</p>
+                        <input type="number">
+                        <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                    </div>
+                    <div class="cone-3">
+                        <p>3-Cone Drill</p>
+                        <input type="number" id="input_3cone">
+                        <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                    </div>
+                </div>
+                
+                <div class="shuttle-60yard">
+                    <div class="shuttle">
+                     <p>Shuttle 20-yard</p>
+                     <input type="number">
+                    <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                    </div>
+                    <div class="60-yard shuttle">
+                        <p>60-Yard Shuttle</p>
+                        <input type="number" id="input_3cone">
+                        <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                    </div>
+                </div>
+                
+    
+                <div class="supino">
+                    <p>Repetições Supino 100kg</p>
+                    <b style="color: red;">ATENÇÃO SE VOCÊ NUNCA FEZ UMA REPETIÇÃO COM ESTA CARGA COLOQUE COMO 0</b>
+                    <input type="number" id="input_supino">
+                </div>
+                <div class="div_botao">
+                    <button>ENVIAR</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
