@@ -1,0 +1,355 @@
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Lilita One", sans-serif;
+    margin: 0;
+    padding: 0;
+   
+}
+
+header {
+    display: flex;
+    margin: 0 50px 0 50px;
+    justify-items: center;
+    align-items:  center;
+    justify-content: space-between;
+    
+}
+
+
+header a{
+    text-decoration: none;
+    color: #0E2C61;
+}
+.logo {
+    height: 150px;
+    width: 150px;
+}
+header ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    list-style: none;
+    font-size: 20px;
+    align-items: center;
+}
+
+.botão_login_registro {
+    background-color: #0E2C61;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    
+}
+
+.header_textos {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.home {
+    display: flex;
+    margin: 0px  60px 0 60px;
+    gap: 400px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+
+}
+
+.texto_home {
+    font-size: 20px;
+}
+
+.texto_home span {
+    color: #0E2C61;
+}
+
+.pilares {
+    background-color: #0E2C61;
+    height: 400px;
+
+    margin-top: 0;
+    padding: 50px;
+}
+
+.pilares {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: left;
+
+
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 240px;
+}
+
+.pilares .cards-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pilares .cards-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.pilares .cards-1  .conteiner-1{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    height: 80px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+
+.pilares .cards-1  .conteiner-1 img{
+    height: 70px;
+    width: 70px;
+}
+.pilares .cards-1  .conteiner-2{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    height: 80px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: 15px;
+}
+
+.pilares .cards-1  .conteiner-2 img{
+    height: 70px;
+    width: 70px;
+}
+
+
+.pilares .cards-1  .conteiner-3{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    height: 80px;
+    width: 400px;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-items: center;
+    gap: 20px;
+    
+}
+
+
+.pilares .cards-1  .conteiner-3 img{
+    height: 70px;
+    width: 70px;
+}
+
+
+.pilares .cards-2  .conteiner-1{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    height: 80px;
+    width: 400px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 7px;
+}
+
+
+.pilares .cards-2  .conteiner-1 img{
+    height: 70px;
+    width: 70px;
+}
+.pilares .cards-2  .conteiner-2{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    height: 80px;
+    width: 400px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 7px;
+    font-size: 15px;
+}
+
+
+.pilares .cards-2  .conteiner-2 img{
+    height: 70px;
+    width: 70px;
+}
+.pilares .cards-2  .conteiner-3{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    height: 80px;
+    width: 400px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 7px;
+}
+
+
+.pilares .cards-2  .conteiner-3 img{
+    height: 70px;
+    width: 70px;
+}
+
+.aprender {
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+    height: 500px;
+
+}
+
+.aprender .texto {
+    
+    font-size: 30px;
+}
+
+
+
+.aprender .topicos_aprendizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 240px;
+    
+    height: 500px;
+}
+
+.regras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.regras img {
+    width: 300px;
+    height: 307px;
+}
+
+
+.papeis {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.papeis img {
+    width: 300px;
+    height: 307px;
+}
+
+
+.taticas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.taticas img {
+    width: 300px;
+    height: 280px;
+}
+.aprender .topicos_aprendizado .regras_img  img {
+    
+    height: 100;
+    width: 100;
+}
+
+.aprender .topicos_aprendizado .papéis    .papeis_img  img {
+    
+    height: 100;
+    width: 100;
+}
+
+.aprender .topicos_aprendizado .taticas_img  img {
+    
+    height: 100;
+    width: 100;
+}
+
+
+
+
+
+
+.botão_aprender {
+    background-color: #FBD800;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(5, 4, 4);
+    font-size: 20px;
+    border-radius: 10px;
+    
+}
+
+
+footer {
+    background-color: #0E2C61;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    gap: 40px;
+    padding: 20px;
+}
+
+footer h1 {
+    font-size: 20px;
+}
+
+footer ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}

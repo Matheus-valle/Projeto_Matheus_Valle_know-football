@@ -1,0 +1,247 @@
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #445056;
+    font-family: "Lilita One", sans-serif;
+}
+
+header {
+    height: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header img {
+    height: 120px;
+    width: 140px;
+}
+
+
+.mensagem_usuario {
+    background-color: #0B9FEB;
+    color: white;
+    width: 1000px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.pagina_total {
+    display: flex;
+    justify-content: space-between;
+} 
+
+
+
+.nav_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0E2C61;
+    height: 400px;
+    width: 300px;
+    border-radius: 0px 20px 20px 0px;
+    gap: 35px;
+}
+
+.nav_bar {
+    color: white;
+    font-size: 30px;
+}
+
+
+.nav_bar button {
+          background-color: #0B9FEB;;
+    color: white;
+    font-family: "Lilita One", sans-serif;
+    font-size: 30px;
+    height: 70px;
+    width: 240px;
+    border: 7px solid #8AD9FF;
+    border-radius: 20px;
+}
+
+.posição {
+    display: flex;
+    width: 1200px;
+    height: 300px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    font-size: 30px;
+    color: white;
+}
+
+.posição img {
+    width: 350px;
+    height: 230px;
+    border-radius: 20px;
+}
+
+.dashboard {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.card_dashboard {
+    background-color: #0E2C61;
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    border-radius: 20px;
+    height: 1050px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.KPIS {
+    display: flex;
+    justify-content: space-between;    
+}
+
+
+.KPI_1 {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.KPI_1  .KP1_TEMPO{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBD800;
+    border-radius: 20px;
+    
+    font-size: 30px;
+}
+
+
+
+.KPI_2 {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.KPI_2  .KP2_FUTEBOL{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FBD800;
+    border-radius: 20px;
+    
+    font-size: 30px;
+}
+
+
+.KPI_3 {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.KPI_3  .KP3_GANHO{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fb0000;
+    border-radius: 20px;
+    
+    font-size: 30px;
+}
+
+.calculo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8AD9FF;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    height: 600px;
+}
+
+.registros {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputs {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 400px;
+}
+
+.botões_registro {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    width: 350px;
+}
+
+.inputs input {
+    border: 7px solid #2A7FE8;
+    height: 70px;
+    width: 380px;
+    color:  #0E2C61;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+.botões_registro button {
+           background-color: #2A7FE8 ;
+    color: white;
+    font-family: "Lilita One", sans-serif;
+    font-size: 40px;
+    height: 70px;
+    width: 280px;
+    border: 7px solid #8AD9FF;
+    border-radius: 20px;
+
+}
