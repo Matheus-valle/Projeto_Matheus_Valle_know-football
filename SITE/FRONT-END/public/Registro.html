@@ -47,11 +47,11 @@
         
             <select  id="região_brasil">
                 <option value="#">Selecione uma região</option>
-                <option value="norte">Norte</option>
-                <option value="Nordeste">Nordeste</option>
-                <option value="Centroeste">Centroeste</option>
-                <option value="Suldeste">Suldeste</option>
-                <option value="Sul">Sul</option>
+                <option value="1">Norte</option>
+                <option value="2">Nordeste</option>
+                <option value="3">Centroeste</option>
+                <option value="4">Suldeste</option>
+                <option value="5">Sul</option>
             </select>
                 <p>Digite sua frequencia de treino fisico na semana</p>
                 <input type="number" id="input_frequencia" maxlength="7">
@@ -112,7 +112,7 @@
         var nome = input_nome.value
         var data = input_data.value
         var email = input_email.value
-        var select_regiao = região_brasil.value
+        var select_regiao = Number(região_brasil.value)
         var senha = input_senha.value
         var altura = Number(input_altura.value)
         var peso = Number(input_peso.value)
@@ -265,6 +265,9 @@
       });
 
     return false;
+
+
+    
   }
 
   // Listando empresas cadastradas 

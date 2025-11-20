@@ -3,9 +3,18 @@ CREATE DATABASE football_db;
 USE football_db;
 
 CREATE TABLE Região (
-idRegião INT PRIMARY KEY,
+idRegião INT PRIMARY KEY AUTO_INCREMENT,
 nome_região  VARCHAR(45)
 );
+
+SELECT * FROM Região;
+
+INSERT INTO Região (nome_região) VALUES
+	('Norte'),
+    ('Nordeste'),
+    ('Centroeste'),
+    ('Sudeste'),
+    ('Sul');
 
 CREATE TABLE TIMES (
 idTIMES int PRIMARY KEY AUTO_INCREMENT,
