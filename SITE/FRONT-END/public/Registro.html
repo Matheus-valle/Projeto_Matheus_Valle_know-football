@@ -38,7 +38,50 @@
         <input  id="input_data"  type="date"><br>
          <p>Email</p>
         <input id="input_email"  type="text"><br>
-         <p>Senha</p>
+        
+        <p>Digite sua altura</p>
+        <input type="number" id="input_altura">
+        <p>Digite seu peso em kg</p> 
+        <input type="number" id="input_peso">
+        <p>Selecione sua região do Brasil</p>
+        
+            <select  id="região_brasil">
+                <option value="#">Selecione uma região</option>
+                <option value="norte">Norte</option>
+                <option value="Nordeste">Nordeste</option>
+                <option value="Centroeste">Centroeste</option>
+                <option value="Suldeste">Suldeste</option>
+                <option value="Sul">Sul</option>
+            </select>
+                <p>Digite sua frequencia de treino fisico na semana</p>
+                <input type="number" id="input_frequencia" maxlength="7">
+                <p style="font-size: 12px;">OBS:(Se você não treina</p>
+                <p style="font-size: 12px;">infelizmente não podemos continuar com o cadastro)</p>
+                <br><br>    
+                    <p>Nesta proxima parte precisamos que você tire  ou coloque</p> 
+                    <p> valores aproximados dos drills acima</p>
+                <br><br>
+                <p>Tiro de 40y (36 mêtros)</p>
+                <input type="number" id="input_40y">
+                <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                        <p>3-Cone Drill</p>
+                        <input type="number" id="input_3cone">
+                        <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                
+                     <p>Shuttle 20-yard</p>
+                     <input type="number" id="input_shuttle_20">
+                    <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                
+                        <p>60-Yard Shuttle</p>
+                        <input type="number" id="input_shuttle_60">
+                        <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+    
+                
+                    <p>Repetições Supino 100kg</p>
+                    <b style="color: red;">ATENÇÃO SE VOCÊ NUNCA FEZ UMA REPETIÇÃO COM ESTA CARGA COLOQUE COMO 0</b>
+                    <input type="number" id="input_supino">
+                
+                 <p>Senha</p>
         <input id="input_senha"  type="password"><br>
          <p>Confirmar Senha</p>
         <input id="input_confirmarSenha"  type="password"><br>
@@ -46,7 +89,7 @@
                     <button class="botao_cadastro_login" onclick="enviar_registro()">REGISTRO</button><br>
         <div id="div_erro"></div>
 
-        </div>
+    </div>
 
 
     </section>
@@ -69,7 +112,16 @@
         var nome = input_nome.value
         var data = input_data.value
         var email = input_email.value
+        var select_regiao = região_brasil.value
         var senha = input_senha.value
+        var altura = Number(input_altura.value)
+        var peso = Number(input_peso.value)
+        var frequencia = Number(input_frequencia.value)
+        var tiro40y = Number(input_40y.value)
+        var cone_3 =  Number(input_3cone.value)
+        var shuttle_20 =  Number(input_shuttle_20.value)
+        var shuttle_60 = Number(input_shuttle_60.value)
+        var repetições = Number(input_supino.value)
         var confirmar_senhha = input_confirmarSenha.value
         var mensagem = ""
         var contador_validações = 0
@@ -81,10 +133,48 @@
             contador_validações++
         }
 
-        
+        if (select_regiao == '#') {
+            mensagem += "selecione uma regiao! <br>"
+            contador_validações++
+        }
+
+        if (altura == 0) {
+            mensagem += `altura errada <br>`
+            contador_validações++ 
+        }
+
+        if (peso == 0) {
+            mensagem += `Peso errado <br>`
+            contador_validações++  
+        }
+
+        if (frequencia == 0) {
+            mensagem += `frequencia errada <br>`
+            contador_validações++ 
+        }
+
+        if (tiro40y <= 0) {
+            mensagem += `tiro de 40y invalido <br>` 
+            contador_validações++
+        }
+        if(cone_3 <= 0) {
+            mensagem += `Drill 3 cones invalido <br>`
+            contador_validações++ 
+        }
+        if (shuttle_20 <= 0) {
+            mensagem += `Shuttle 20y errado <br>` 
+        }
+
+        if (shuttle_60 <= 0) {
+            mensagem += `Shuttle 60y errado <br>` 
+        }
+
+        if (repetições < 0) {
+            mensagem += `repetições supino invalido <br>` 
+        }
 
         if (senha != confirmar_senhha) {
-            mensagem += 'senha não conrresponde ao confirmar senha'
+            mensagem += 'senha não conrresponde ao confirmar senha <br>' 
             contador_validações++
         } 
         console.log(data)
@@ -146,19 +236,21 @@
         nomeServer: nome,
         emailServer: email,
         senhaServer:  senha,
+        regiaoServer: select_regiao,
+        alturaServer: altura,
+        pesoServer: peso, 
+        frequenciaServer: frequencia
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
-            resposta.json().then(json => {
-                sessionStorage.NOME_USUARIO = json.nome
-                sessionStorage.EMAIL_USUARIO = json.email
-            })
+            
 
         if (resposta.ok) {
     
           setTimeout(() => {
-            window.location = "./dashboard/continuação_cadastro.html";
+            window.location = "login.html";
+            div_erro.innerHTML = `<b style="color: green">Cadastro feito com Sucesso!</b>` 
           }, "2000");
 
         

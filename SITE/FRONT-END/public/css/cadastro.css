@@ -8,10 +8,9 @@
 
 
 .login_cadastro {
-    height: 600px;
+    height: 1600px;
     background-color: #232830;
     align-items: center;
-    background-image: url('../assets/imagem_fundo_login.png');
     background-position: center center;
     background-repeat: no-repeat; /*Avisar professores sobre essas tags utillizadas */ 
     background-size: 100% 100%;
@@ -71,4 +70,22 @@
 
 .erros b {
     color: red;
+}
+
+
+.login_cadastro select {
+        height: 40px;
+    width: 580px;
+    color:  #0E2C61;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    border: 7px solid #0E2C61;
+    border-radius: 20px;
+
 }
