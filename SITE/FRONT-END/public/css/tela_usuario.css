@@ -251,3 +251,55 @@ header img {
     border-radius: 20px;
 
 }
+
+.aviso {
+   
+    width: 1240px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+.card_times {
+    display: flex;
+    flex-wrap: wrap;
+    width:1200px;
+    height: 1000px;
+    display: flex;
+    padding: 30px;
+    gap: 15px;
+    row-gap: 15px;
+    column-gap: 15px;
+    margin: 0;
+    justify-content: center;
+}
+
+.card_time {
+    padding: 20px;
+    border: 7px solid #0B9FEB;
+    background-color: #0E2C61;
+    height: auto;
+    width: 500px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+    
+}
+
+.card_time button {
+    width: 170px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 7px solid #2A7FE8;
+    font-family: "Lilita One", sans-serif;
+
+}
+
+.dados_time {
+    font-size: 30px;
+}

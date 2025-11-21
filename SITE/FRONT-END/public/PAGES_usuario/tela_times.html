@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <title>Times</title>
 </head>
-<body onload="visualizar()">
+<body onload="listar_times()">
     <header>
         <div class="logo">
             <img src="../assets/LOGO-removebg-preview.png" alt="img">
@@ -27,12 +27,97 @@
             <button><a href="tela_times.html">SELETIVAS</a></button>
 
         </div>
-        <div class="aviso">
-            <div class="posição">
-            <div class="textos">
-            <p>(Dependendo do seu momento fisico, não é recomentando se inscrever em uma seletiva!)</p> 
+        <div class="aviso" >
+            <div id = "textos">
+            <p>Dependendo das suas metricas não é recomendado de increver em uma seletiva</p><br> 
+            </div>
+            <div class="card_times" id="time">
+                <div class="card_time">
+                <div class="dados_time">
+                <p>Nome time: São Paulo Giants</p> 
+                <p>Estado time: São Paulo</p> 
+                <p>Cidade time: São Paulo</p>
+                <p>Região time: Sudeste</p>
+                </div>
+                <button><a>Se increva aqui</a></button> 
+                </div>
+                <div class="card_time">
+                <div class="dados_time">
+                <p>Nome time: São Paulo Giants</p> 
+                <p>Estado time: São Paulo</p> 
+                <p>Cidade time: São Paulo</p>
+                <p>Região time: Sudeste</p>
+                </div>
+                <button><a>Se increva aqui</a></button> 
+                </div>
+
+
+                                <div class="card_time">
+                <div class="dados_time">
+                <p>Nome time: São Paulo Giants</p> 
+                <p>Estado time: São Paulo</p> 
+                <p>Cidade time: São Paulo</p>
+                <p>Região time: Sudeste</p>
+                </div>
+                <button><a>Se increva aqui</a></button> 
+                </div>
+
+
+
+                                <div class="card_time">
+                <div class="dados_time">
+                <p>Nome time: São Paulo Giants</p> 
+                <p>Estado time: São Paulo</p> 
+                <p>Cidade time: São Paulo</p>
+                <p>Região time: Sudeste</p>
+                </div>
+                <button><a>Se increva aqui</a></button> 
+                </div>
+
+
+                                <div class="card_time">
+                <div class="dados_time">
+                <p>Nome time: São Paulo Giants</p> 
+                <p>Estado time: São Paulo</p> 
+                <p>Cidade time: São Paulo</p>
+                <p>Região time: Sudeste</p>
+                </div>
+                <button><a>Se increva aqui</a></button> 
+                </div>
+
+                
             </div>
         </div>
+        
     </div>
 </body>
 </html>
+
+<script>
+    function listar_times() {
+        var regiao_usuario = sessionStorage.REGIAO_USUARIO
+        var nome_região = ""
+       
+        
+        var nome_região = ""
+
+        if (regiao_usuario == "1") {
+            nome_região = "Norte"
+        }
+        if (regiao_usuario == "2") {
+            nome_região = "Nordeste"
+        }
+        if (regiao_usuario == "3" ) {
+            nome_região = "Centroeste"
+        } 
+        if (regiao_usuario == "4") {
+            nome_região = "Sudeste"
+        } 
+        if (regiao_usuario == "5") {
+            nome_região = "SUl"
+        }
+
+        textos.innerHTML += `Com base na sua regiao <b style="color: yellow;">${nome_região}</b> os times disponiveis são:` 
+        
+    }
+</script>
