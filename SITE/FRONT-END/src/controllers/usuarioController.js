@@ -56,8 +56,14 @@ function cadastrar(req, res) {
     var regiao = req.body.regiaoServer;
     var altura = req.body.alturaServer;
     var peso = req.body.pesoServer;
-    var frequencia = req.body.frequenciaServer
+    var frequencia = req.body.frequenciaServer;
+    var tiro40 = req.body.tiro40Server;
+    var cone_3 = req.body.cone_3Server;
+    var shuttle_20 = req.body.shuttle_20Server;
+    var shuttle_60 = req.body.shuttle_60Server
+    var repeticoes = req.body.repetiçõesServer;
     
+    console.log(nome, email, senha, regiao, altura, peso, frequencia, tiro40, cone_3, shuttle_20, shuttle_60, repeticoes)
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -69,7 +75,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, regiao, altura, peso, frequencia)
+        usuarioModel.cadastrar(nome, email, senha, regiao, altura, peso, frequencia, tiro40, cone_3, shuttle_20, shuttle_60, repeticoes)
             .then(
                 function (resultado) {
                     res.json(resultado);
