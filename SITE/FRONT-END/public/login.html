@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/bola_icon.png" type="image/x-icon">
     <title>Login</title>
 </head>
 <body>
@@ -107,10 +108,18 @@
                     sessionStorage.NOME_USUARIO = usuario.nome
                     sessionStorage.EMAIL_USUARIO = usuario.email
                     sessionStorage.REGIAO_USUARIO = usuario.regiao 
+                    sessionStorage.TIRO40_USUARIO = usuario.tiro_40
+                    sessionStorage.CONES3_USUARIO = usuario.cones_3
+                    sessionStorage.SHUTTLE20_USUARIO = usuario.shuttle_20
+                    sessionStorage.SHUTTLE60_USUARIO = usuario.shuttle_60
+                    sessionStorage.REPETICOES_USUARIO = usuario.repeticoes_supino
+                    sessionStorage.FREQUENCIA_USUARIO = usuario.frequencia
+                    sessionStorage.ALTURA_USUARIO = usuario.altura
+                    sessionStorage.PESO_USUARIO = usuario.peso
                     
                     setTimeout(function () {
                         window.location = "./PAGES_usuario/tela_usuario.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 250); // apenas para exibir o loading
 
                 });
 
@@ -119,7 +128,7 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
-
+                 div_mensagemErro.innerHTML = `<b style="color: red;">Senha ou email incorretos! tente novamente!</b>` 
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);

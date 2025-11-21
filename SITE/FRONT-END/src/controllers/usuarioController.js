@@ -26,7 +26,16 @@ function autenticar(req, res) {
                         email: resultadoAutenticar[0].email_usuario,
                         nome: resultadoAutenticar[0].nome_usuario,
                         senha: resultadoAutenticar[0].senha, 
-                        regiao: resultadoAutenticar[0].região_usuario
+                        regiao: resultadoAutenticar[0].região_usuario,
+                        frequencia: resultadoAutenticar[0].frequencia_treino,
+                        tiro_40: resultadoAutenticar[0].metrica_tiro40y,
+                        cones_3: resultadoAutenticar[0].metrica_3cones,
+                        shuttle_20: resultadoAutenticar[0].metrica_shuttle_20,
+                        shuttle_60: resultadoAutenticar[0].metrica_shuttle_60, 
+                        repeticoes_supino: resultadoAutenticar[0].metrica_supino,  
+                        altura: resultadoAutenticar[0].altura_usuario,
+                        peso: resultadoAutenticar[0].peso_usuario
+    
                         });
 
                     } else if (resultadoAutenticar.length == 0) {
