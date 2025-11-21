@@ -29,7 +29,8 @@
             </div>
         </div>
     </header>
-    <section class="login_cadastro">
+    <section class="cadastro">
+        <div class="card_cadastro">
         <h1>REGISTRO</h1>
         <br>
         <p>Nome</p>
@@ -39,11 +40,19 @@
          <p>Email</p>
         <input id="input_email"  type="text"><br>
         
+        <div class="altura_peso">
+        <div class="altura">
         <p>Digite sua altura</p>
         <input type="number" id="input_altura">
+        </div>
+        <div class="peso">
         <p>Digite seu peso em kg</p> 
         <input type="number" id="input_peso">
-        <p>Selecione sua região do Brasil</p>
+        </div>
+         </div>
+         <br> 
+        <p style="font-size: 20px;">Selecione sua região do Brasil</p>
+       
         
             <select  id="região_brasil">
                 <option value="#">Selecione uma região</option>
@@ -57,30 +66,31 @@
                 <input type="number" id="input_frequencia" maxlength="7">
                 <p style="font-size: 12px;">OBS:(Se você não treina</p>
                 <p style="font-size: 12px;">infelizmente não podemos continuar com o cadastro)</p>
-                <br><br>    
+                <br><br>
+                <div class="metricas"> 
                     <p>Nesta proxima parte precisamos que você tire  ou coloque</p> 
-                    <p> valores aproximados dos drills acima</p>
+                    <p> valores aproximados dos exercicios acima</p>
                 <br><br>
                 <p>Tiro de 40y (36 mêtros)</p>
                 <input type="number" id="input_40y">
-                <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                <a href="">CLIQUE AQUI PARA VER O EXERCICIO</a>
                         <p>3-Cone Drill</p>
                         <input type="number" id="input_3cone">
-                        <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                        <a href="">CLIQUE AQUI PARA VER O EXERCICIO</a>
                 
                      <p>Shuttle 20-yard</p>
                      <input type="number" id="input_shuttle_20">
-                    <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                    <a href="">CLIQUE AQUI PARA VER O EXERCICIO</a>
                 
                         <p>60-Yard Shuttle</p>
                         <input type="number" id="input_shuttle_60">
-                        <a href="">CLIQUE AQUI PARA VER O DRILL</a>
+                        <a href="">CLIQUE AQUI PARA VER O EXERCICIO</a>
     
                 
                     <p>Repetições Supino 100kg</p>
-                    <b style="color: red;">ATENÇÃO SE VOCÊ NUNCA FEZ UMA REPETIÇÃO COM ESTA CARGA COLOQUE COMO 0</b>
+                    <b style="color: rgb(230, 131, 131);">ATENÇÃO SE VOCÊ NUNCA FEZ UMA REPETIÇÃO COM ESTA CARGA COLOQUE COMO 0</b>
                     <input type="number" id="input_supino">
-                
+                </div>
                  <p>Senha</p>
         <input id="input_senha"  type="password"><br>
          <p>Confirmar Senha</p>
@@ -88,6 +98,8 @@
         <div class="erros">
                     <button class="botao_cadastro_login" onclick="enviar_registro()">REGISTRO</button><br>
         <div id="div_erro"></div>
+
+        </div>
 
     </div>
 
@@ -148,7 +160,7 @@
             contador_validações++  
         }
 
-        if (frequencia == 0) {
+        if (frequencia == 0 || frequencia > 7) {
             mensagem += `frequencia errada <br>`
             contador_validações++ 
         }
