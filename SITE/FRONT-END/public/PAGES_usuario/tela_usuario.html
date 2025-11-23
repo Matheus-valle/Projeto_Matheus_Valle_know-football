@@ -11,7 +11,7 @@
     <link rel="icon" href="../assets/bola_icon.png" type="image/x-icon">
     <title>tela home</title>
 </head>
-<body onload="visualizar()">
+<body onload="mostrar(), visualizar()" >
     <header>
         <div class="logo">
             <img  onclick="home()"  src="../assets/LOGO-removebg-preview.png" alt="img">
@@ -31,13 +31,17 @@
         </div>
     
      <div class="lista">
-        <div class="posição">
-            <div class="textos">
+        <div class="posição" >
+            <div class="textos" >
             <p>SEUS DADOS ESTÃO SENDO </p> 
             <p> COMPUTADOS PARA A POSIÇÃO:</p> 
-            <p>LINHA OFENSIVA</p>
+            <p id="p_posicao" style="color: yellow;"></p>
             </div>
-            <img src="https://cdn.theplayoffs.news/wp-content/uploads/2025/10/USATSI_27008395_168414878_lowres-1200x776.jpg" alt="img">
+            <div id="img_usuario">
+
+
+            </div>
+            
         </div>
         <div class="dashboard">
             <div class="titulo">
@@ -110,6 +114,59 @@
     function home() {
         window.location = "../index.html"
     }
+
+    function mostrar() {
+
+        
+    var peso =  parseFloat(sessionStorage.PESO_USUARIO) 
+    var altura =  parseFloat(sessionStorage.ALTURA_USUARIO )
+    var img = ""
+
+        console.log(typeof(peso))
+        console.log(typeof(altura))
+        
+     if (peso > 0 && altura > 0) {
+            posição = `Running Back`
+            img = `<img src="../assets/runningback_icon.jpg">`
+        
+            if (peso > 75 && altura > 1.75) {
+                posição = `Corner Back`
+                img = `<img src="../assets/cornerback_icon.jpg">`
+                
+                if (peso > 80 && altura > 1.80) {
+                    posição = `Wide Receiver`
+                    img = `<img src="../assets/widereceiver_icon.jpg">`
+                    if (peso > 100 && altura > 1.82) {
+                        posição = `Linebacker`
+                        img = `<img src="../assets/linebacker_icon.jpeg">`
+                    
+                        if (peso > 104 && altura > 1.83) {
+                            posição = `Quarter back`
+                            img = `<img src="../assets/quarterback_icon.jpeg">`
+
+                            if (peso > 106 && altura > 1.85) {
+                                posição = `Tight end`
+                                img = `<img src="../assets/tightend_icon.jpg">`
+                                if (peso > 115 && altura > 1.87) {
+                                    posição = `Defensive Lineman`
+                                    img = `<img src="../assets/defensivelineman_icon.jpeg">`
+                                    if (peso > 125 && altura > 1.90) {
+                                        posição = `Ofensive Lineman`
+                                        img = `<img src="../assets/ofensivelineman_icon.jpeg">`
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        console.log(img)
+        img_usuario.innerHTML += img
+        p_posicao.innerHTML = posição
+    }
+
 
 
     mensagem_usuario.innerHTML = `<h1>OLÁ ${sessionStorage.NOME_USUARIO}</h1>`
