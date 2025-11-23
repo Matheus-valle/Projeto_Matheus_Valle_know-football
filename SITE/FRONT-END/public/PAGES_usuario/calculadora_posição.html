@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite sua altura: <input type="number" id="input_altura"><br>
+    Digite seu peso <input type="number" id="input_peso"><br>
+    <button onclick="descobrir()">Descobrir posição</button>
+</body>
+
+</html>
+<script>
+    /* Fontes:
+    https://craigmbooth.com/blog/the-height-and-weight-of-every-active-football-player/
+    */
+    function descobrir() {
+        var altura = Number(input_altura.value)
+        var peso = Number(input_peso.value)
+        var posição = ``
+        var img = ""
+
+
+
+        if (peso > 0 && altura > 0) {
+            posição = `RB`
+            if (peso > 75 && altura > 1.75) {
+                posição = `CB`
+                if (peso > 80 && altura > 1.80) {
+                    posição = `WR`
+
+                    if (peso > 100 || altura > 1.82) {
+                        posição = `QB`
+
+                        if (peso > 110 || altura > 1.85) {
+                            posição = `TE`
+
+                            if (peso > 115 || altura > 1.87) {
+                                posição = `DL`
+
+                                if (peso > 125 || altura > 1.90) {
+                                    posição = `OL`
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+         console.log(posição)
+    }
+
+   
+</script>
+
+
+<!--
+RB:  
+CB  (> 70 && altura > 1.75)
+WR  (> 75kg && altura > 1.80)
+QB  (> 105kg && altura > 1.90)
+TE  (> 101kg || >  1.95)
+DL  (> 115kg || 1.88 )
+OL (> 139kg  || 1.92)
+-->

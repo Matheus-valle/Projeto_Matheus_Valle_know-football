@@ -2,6 +2,7 @@ CREATE DATABASE football_db;
 
 USE football_db;
 
+
 CREATE TABLE Região (
 idRegião INT PRIMARY KEY AUTO_INCREMENT,
 nome_região  VARCHAR(45)
@@ -15,6 +16,9 @@ INSERT INTO Região (nome_região) VALUES
     ('Centroeste'),
     ('Sudeste'),
     ('Sul');
+    
+    DROP TABLE TIMES;
+    
 
 CREATE TABLE TIMES (
 idTIMES int PRIMARY KEY AUTO_INCREMENT,
@@ -25,7 +29,8 @@ CONSTRAINT fk_região_time
 	FOREIGN KEY (região_time)
 		REFERENCES Região (idRegião),
 cidade_time VARCHAR(45),
-formulario_time VARCHAR(200)
+formulario_time VARCHAR(200),
+categoria VARCHAR(45)
 ); 
 
 INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time, formulario_time) VALUES
