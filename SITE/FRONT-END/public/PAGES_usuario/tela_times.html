@@ -54,6 +54,7 @@
     function listar_times() {
         var regiao_usuario = sessionStorage.REGIAO_USUARIO
         var nome_região = ""
+        var id_usuario = sessionStorage.ID_USUARIO
        
         
         var nome_região = ""
@@ -76,5 +77,44 @@
 
         textos.innerHTML += `Com base na sua regiao <b style="color: yellow;">${nome_região}</b> os times disponiveis são:` 
         
+
+
+
+         fetch(`http:/localhost/times/mostrarTimes/${id_usuario}`, {  
+        method: "GET",
+    }).then(function(response){
+        if (response.ok) {
+            return response.json();
+        } else {
+            console.log("Erro na api")
+        }
+    }  ).then(function (response) {
+            
+
+                 if(response.length ==  0){
+                        div_safras.innerHTML += `<h1 style="color: red;">Nenhuma safra cadastrada!</h1>` 
+                    }
+                    
+                
+                
+                console.log("o codigo deu certo")
+
+                
+                    
+                    var status_ativo = 0 
+                         /* Armazenamento na Session Storage */
+
+
+                    console.log(response)
+                    
+                    for(i = 0; i < response.length; i++){
+
+                        console.log(i)               
+                    
+
+                }
+            
+    })
+
     }
 </script>

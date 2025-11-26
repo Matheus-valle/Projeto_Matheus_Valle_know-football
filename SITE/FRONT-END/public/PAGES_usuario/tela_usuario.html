@@ -110,7 +110,8 @@
 </html>
 
 <script>
-
+       mensagem_usuario.innerHTML = `<h1>OLÁ ${sessionStorage.NOME_USUARIO}</h1>`
+       
     function home() {
         window.location = "../index.html"
     }
@@ -151,7 +152,7 @@
                                     posição = `Defensive Lineman`
                                     img = `<img src="../assets/defensivelineman_icon.jpeg">`
                                     if (peso > 125 && altura > 1.90) {
-                                        posição = `Ofensive Lineman`
+                                        posição = `Offensive Lineman`
                                         img = `<img src="../assets/ofensivelineman_icon.jpeg">`
 
                                     }
@@ -169,18 +170,8 @@
 
 
 
-    mensagem_usuario.innerHTML = `<h1>OLÁ ${sessionStorage.NOME_USUARIO}</h1>`
-    var mes = 0
-    var tempo = 0
-
-    var mes1 
-    var mes2 
-    var mes3 
-    var mes4 
-    var mes5 
-    var mes6 
-
-    function cadastrar() {
+ 
+ function cadastrar(mes, tempo) {
         console.log("clicou")
         mes = Number(Input_mes.value)
         tempo = Number(input_tempo.value)
@@ -209,8 +200,8 @@
             mes6 == tempo
         }
 
-
     }
+    
 
     function editar(){
 
@@ -218,7 +209,9 @@
 
 
     function visualizar(){
-
+        mes1 = 3.1 
+        mes2 = 3.0
+        mes3 = 6.0
   const ctx = document.getElementById('myChart');
     console.log(mes2)
   new Chart(ctx, {
@@ -227,7 +220,7 @@
       labels: ['Inicio', 'Mês 1', 'Mês 2', 'Mês 3', 'Mês 4', 'Mês 5', 'Mês 6'],
       datasets: [{
         label: 'Projeção',
-        data: [5.90, 5.80, 5.50, 5.40, 5.30, 5.20, 5.10],
+        data: [5.90, mes1, mes2, mes3, mes4, mes5, mes6],
         borderWidth: 1
       },
      {
