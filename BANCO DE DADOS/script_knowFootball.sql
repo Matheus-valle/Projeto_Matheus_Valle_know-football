@@ -16,9 +16,6 @@ INSERT INTO Região (nome_região) VALUES
     ('Centroeste'),
     ('Sudeste'),
     ('Sul');
-    
-    DROP TABLE TIMES;
-    
 
 CREATE TABLE TIMES (
 idTIMES int PRIMARY KEY AUTO_INCREMENT,
@@ -32,7 +29,11 @@ cidade_time VARCHAR(45),
 formulario_time VARCHAR(200),
 categoria VARCHAR(45)
 ); 
-
+SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categoria FROM TIMES WHERE região_time = 3;
+SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categoria FROM Usuario JOIN região ON região_usuario = idRegião JOIN TIMES ON região_time = idRegião WHERE idUsuario =4;
+INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
+	('Time fake A', 'Mato Grosso', 3, 'Cuiaba', 'sadasdasdasda',  'Masculino'),
+	('Time fake B', 'Mato Grosso do sul', 3, 'Campo grande', 'sadasdasdasda',  'Feminino');
 INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time, formulario_time) VALUES
 	('SP Storm', 'São Paulo',  'sudeste', 'São Paulo', 'askdjaskjsda');
 

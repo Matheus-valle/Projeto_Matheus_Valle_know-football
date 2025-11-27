@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta charset="UTF-8">
@@ -11,13 +12,14 @@
     <link rel="icon" href="../assets/bola_icon.png" type="image/x-icon">
     <title>tela home</title>
 </head>
-<body onload="mostrar(), visualizar()" >
+
+<body onload="obterDadosGrafico(), mostrar_posição_usuario()">
     <header>
         <div class="logo">
-            <img  onclick="home()"  src="../assets/LOGO-removebg-preview.png" alt="img">
+            <img onclick="home()" src="../assets/LOGO-removebg-preview.png" alt="img">
         </div>
         <div class="mensagem_usuario" id="mensagem_usuario">
-            
+
         </div>
     </header>
 
@@ -27,120 +29,119 @@
 
             <button><a href="tela_usuario.html">HOME</a></button>
             <button><a href="tela_times.html">SELETIVAS</a></button>
-            
+
         </div>
-    
-     <div class="lista">
-        <div class="posição" >
-            <div class="textos" >
-            <p>SEUS DADOS ESTÃO SENDO </p> 
-            <p> COMPUTADOS PARA A POSIÇÃO:</p> 
-            <p id="p_posicao" style="color: yellow;"></p>
-            </div>
-            <div id="img_usuario">
+
+        <div class="lista">
+            <div class="posição">
+                <div class="textos">
+                    <p>SEUS DADOS ESTÃO SENDO </p>
+                    <p> COMPUTADOS PARA A POSIÇÃO:</p>
+                    <p id="p_posicao" style="color: yellow;"></p>
+                </div>
+                <div id="img_usuario">
 
 
+                </div>
+
             </div>
-            
+            <div class="dashboard">
+                <div class="titulo">
+                    <h1>SUAS ULTIMAS PROJEÇÕES / RESULTADOS:</h1>
+                </div>
+                <div class="card_dashboard">
+                    <div class="titulo_dashboard">
+                        <h1>TIRO 40Y</h1>
+                    </div>
+
+                    <div class="KPIS">
+                        <div class="KPI_1">
+                            <p style="font-size: 15px;">TAXA DE REDUÇÃO DE TEMPO:</p>
+                            <div class="KP1_TEMPO">
+                                <p>2/3 SEGS</p>
+                            </div>
+                        </div>
+                        <div class="KPI_2">
+                            <p style="font-size: 15px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
+                            <div class="KP2_FUTEBOL">
+                                <p>MÉDIA</p>
+                            </div>
+                        </div>
+                        <div class="KPI_3">
+                            <p style="font-size: 15px;">GANHO DE TEMPO:</p>
+                            <div class="KP3_GANHO">
+                                <p>10 SEGS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculo">
+                        <p>CALCULO UTILIZADO PARA AS METRICAS: X = * 12 * PI</p>
+                    </div>
+
+                    <div class="card">
+                        <canvas id="myChart"></canvas>
+                    </div>
+
+                    <div class="registros">
+                        <div class="inputs">
+                            <div class="input1">
+                                <p>DIGITE O MÊS:</p>
+                                <input type="number" id="Input_mes">
+                            </div>
+                            <div class="input2">
+                                <p>DIGITE O TEMPO:</p>
+                                <input type="number" id="input_tempo">
+                            </div>
+                        </div>
+                        <div class="botões_registro">
+                            <div class="botão01">
+                                <p>CADASTRAR:</p>
+                                <button>CADASTRO</button>
+                            </div>
+                            <div class="input2">
+                                <p>EDITAR:</p>
+                                <button>EDITAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="dashboard">
-            <div class="titulo">
-                <h1>SUAS ULTIMAS PROJEÇÕES / RESULTADOS:</h1>
-            </div>
-            <div class="card_dashboard">
-                <div class="titulo_dashboard">
-                    <h1>TIRO 40Y</h1>
-                </div>
-            
-             <div class="KPIS">
-                <div class="KPI_1">
-                    <p style="font-size: 15px;">TAXA DE REDUÇÃO DE TEMPO:</p>
-                    <div class="KP1_TEMPO">
-                        <p>2/3 SEGS</p>
-                    </div>
-                </div>
-                <div class="KPI_2">
-                    <p style="font-size: 15px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
-                    <div class="KP2_FUTEBOL">
-                        <p>MÉDIA</p>
-                    </div>
-                </div>
-                <div class="KPI_3">
-                    <p style="font-size: 15px;">GANHO DE TEMPO:</p>
-                    <div class="KP3_GANHO">
-                        <p>10 SEGS</p>
-                    </div>
-                </div>
-             </div>  
-             <div class="calculo">
-                <p>CALCULO UTILIZADO PARA AS METRICAS: X = * 12 * PI</p>
-             </div> 
-
-             <div class="card">
-                 <canvas id="myChart"></canvas>
-             </div>
-
-             <div class="registros">
-                <div class="inputs">
-                    <div class="input1">
-                        <p>DIGITE O MÊS:</p>
-                        <input type="number" id="Input_mes">
-                    </div>
-                    <div class="input2">
-                        <p>DIGITE O TEMPO:</p>
-                        <input type="number" id="input_tempo">
-                    </div>
-                </div>
-                <div class="botões_registro">
-                     <div class="botão01">
-                        <p>CADASTRAR:</p>
-                        <button onclick="cadastrar()">CADASTRO</button>
-                    </div>
-                    <div class="input2">
-                        <p>EDITAR:</p>
-                        <button onclick="editar()">EDITAR</button>
-                    </div>
-                </div>
-             </div>
-            </div>
-        </div>
-     </div>
     </div>
 </body>
+
 </html>
 
 <script>
-       mensagem_usuario.innerHTML = `<h1>OLÁ ${sessionStorage.NOME_USUARIO}</h1>`
-       
+    mensagem_usuario.innerHTML = `<h1>OLÁ ${sessionStorage.NOME_USUARIO}</h1>`
+
     function home() {
         window.location = "../index.html"
     }
 
-    function mostrar() {
+    function mostrar_posição_usuario() {
 
-        
-    var peso =  parseFloat(sessionStorage.PESO_USUARIO) 
-    var altura =  parseFloat(sessionStorage.ALTURA_USUARIO )
-    var img = ""
 
-        console.log(typeof(peso))
-        console.log(typeof(altura))
-        
-     if (peso > 0 && altura > 0) {
+        var peso = parseFloat(sessionStorage.PESO_USUARIO)
+        var altura = parseFloat(sessionStorage.ALTURA_USUARIO)
+        var img = ""
+
+
+        if (peso > 0 && altura > 0) {
             posição = `Running Back`
             img = `<img src="../assets/runningback_icon.jpg">`
-        
+
             if (peso > 75 && altura > 1.75) {
                 posição = `Corner Back`
                 img = `<img src="../assets/cornerback_icon.jpg">`
-                
+
                 if (peso > 80 && altura > 1.80) {
                     posição = `Wide Receiver`
                     img = `<img src="../assets/widereceiver_icon.jpg">`
                     if (peso > 100 && altura > 1.82) {
                         posição = `Linebacker`
                         img = `<img src="../assets/linebacker_icon.jpeg">`
-                    
+
                         if (peso > 104 && altura > 1.83) {
                             posição = `Quarter back`
                             img = `<img src="../assets/quarterback_icon.jpeg">`
@@ -163,80 +164,141 @@
                 }
             }
         }
-        console.log(img)
         img_usuario.innerHTML += img
         p_posicao.innerHTML = posição
+
+    }
+
+
+    function obterDadosGrafico() {
+        var idUsuario = sessionStorage.ID_USUARIO
+
+        fetch(`/medidas/MetricasCadastradas/${idUsuario}`, {
+                cache: 'no-store'
+            }).then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+
+
+                        console.log(resposta[0].metrica_tiro40y)
+                        var tiro40 =  parseFloat(resposta[0].metrica_tiro40y)
+                        plotar_grafico( parseFloat (tiro40))
+                                            });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+
+
+
+        fetch(`/medidas/ultimas/${idUsuario}`, {
+                cache: 'no-store'
+            }).then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+
+                        console.log(resposta[0].metrica_tiro40y)
+                        for (i = 0; i < resposta.length; i++) {
+                            if (i == 0) {
+                                var mes_ulimo_dado1 = parseFloat(resposta[i].metrica_tiro40y)
+
+                                plotar_grafico(mes_ulimo_dado1)
+                            }
+                            if (i == 1) {
+                                mes_ulimo_dado2 = parseFloat(resposta[i].metrica_tiro40y)
+
+                            }
+                            if (i == 2) {
+                                mes_ulimo_dado3 = parseFloat(resposta[i].metrica_tiro40y)
+                            }
+
+                            if (i == 3) {
+                                mes_ulimo_dado4 = parseFloat(resposta[i].metrica_tiro40y)
+                            }
+
+
+                            if (i == 4) {
+                                mes_ulimo_dado5 = parseFloat(resposta[i].metrica_tiro40y)
+                            }
+
+                            if (i == 5) {
+                                mes_ulimo_dado6 = parseFloat(resposta[i].metrica_tiro40y)
+                            }
+                        }
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
 
 
 
- 
- function cadastrar(mes, tempo) {
-        console.log("clicou")
-        mes = Number(Input_mes.value)
-        tempo = Number(input_tempo.value)
+    function plotar_grafico(tiro40, mes_ulimo_dado1) {
+        parseInt(tiro40)
+        console.log(mes_ulimo_dado1)
+        tiro40 = 5.92
+        
+        // calculando a projeção      
+        var mes0 = tiro40
+        var mes1 =  mes0 -   ( 2 * tiro40 / 100)  
+        var mes2 = mes1 -   ( 2 * mes1 / 100)  
+        var mes3 = mes2 -   ( 2 * mes2 / 100)   
+        var mes4 = mes3 -   ( 2 * mes3 / 100)   
+        var mes5 = mes4 -   ( 2 * mes4 / 100)   
+        var mes7 = mes5 -   ( 2 * mes5 / 100)  
+        console.log('iniciando plotagem do gráfico...');
 
-        if(mes == 1) {
-            mes1 = tempo
-        }
+        let labels = [];
 
-        if(mes == 2 ){
-            mes2 = tempo
-            console.log("foi")
-        }
-        if(mes == 3) {
-            mes3 = tempo
-        }
+        
+        let dados = {
+            labels: labels,
+            labels: ['Inicio', 'Mês 1', 'Mês 2', 'Mês 3', 'Mês 4', 'Mês 5', 'Mês 6'],
+            datasets: [{
+                    label: 'Projeção',
+                    data: [mes0, mes1, mes2, mes3, mes4, mes5, mes7]
+                },
+                {
+                    label: 'Em andamento',
+                    data: [mes0],
 
-        if(mes == 4) {
-            mes4 = tempo
-        }
+                }
+            ]
+        };
 
-        if(mes == 5){
-            mes5 = tempo
-        }
 
-        if (mes == 6) {
-            mes6 == tempo
-        }
-
-    }
+        
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
     
+        dados.datasets[0].data.push(tiro40);
+        dados.datasets[1].data.push(tiro40);
 
-    function editar(){
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChart`),
+            config
+        );
+
 
     }
-
-
-    function visualizar(){
-        mes1 = 3.1 
-        mes2 = 3.0
-        mes3 = 6.0
-  const ctx = document.getElementById('myChart');
-    console.log(mes2)
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Inicio', 'Mês 1', 'Mês 2', 'Mês 3', 'Mês 4', 'Mês 5', 'Mês 6'],
-      datasets: [{
-        label: 'Projeção',
-        data: [5.90, mes1, mes2, mes3, mes4, mes5, mes6],
-        borderWidth: 1
-      },
-     {
-        label: 'Em andamento',
-        data:[6.00, mes1, mes2, mes3, mes4, mes5, mes6]
-     }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-
-} 
 </script>
- 
