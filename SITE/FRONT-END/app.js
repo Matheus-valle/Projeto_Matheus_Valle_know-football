@@ -33,7 +33,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
 app.use("/empresas", empresasRouter);
-app.use("/mostrarTimes", timesRouter)
+app.use("/times", timesRouter)
 
 app.listen(PORTA_APP, function () {
     console.log(`

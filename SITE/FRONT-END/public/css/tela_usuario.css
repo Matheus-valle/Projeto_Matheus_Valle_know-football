@@ -301,7 +301,13 @@ header img {
     border: 7px solid #2A7FE8;
     font-family: "Lilita One", sans-serif;
     font-size: 20px;
+    text-decoration: none;
 
+}
+
+.card_time button a {
+    text-decoration: none;
+    color: black;
 }
 
 .dados_time {

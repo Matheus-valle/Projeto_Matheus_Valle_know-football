@@ -28,22 +28,15 @@
             <button><a href="tela_times.html">SELETIVAS</a></button>
 
         </div>
-        <div class="aviso" >
+        <div class="aviso" id="div_times" >
             <div id = "textos">
             <p>Dependendo das suas metricas não é recomendado se increver em uma seletiva</p><br> 
             </div>
             <div class="card_times" id="time">
-                <div class="card_time">
-                <div class="dados_time">
-                <p>Nome time: São Paulo Giants</p> 
-                <p>Estado time: São Paulo</p> 
-                <p>Cidade time: São Paulo</p>
-                <p>Região time: Sudeste</p>
-                </div>
-                <button><a>Se increva aqui</a></button> 
-                </div>
-                
+
+
             </div>
+
         </div>
         
     </div>
@@ -80,7 +73,7 @@
 
 
 
-         fetch(`http:/localhost/times/mostrarTimes/${id_usuario}`, {  
+         fetch(`/times/mostrarTimes/${id_usuario}`, {  
         method: "GET",
     }).then(function(response){
         if (response.ok) {
@@ -90,29 +83,34 @@
         }
     }  ).then(function (response) {
             
-
-                 if(response.length ==  0){
-                        div_safras.innerHTML += `<h1 style="color: red;">Nenhuma safra cadastrada!</h1>` 
-                    }
-                    
-                
-                
-                console.log("o codigo deu certo")
-
-                
-                    
-                    var status_ativo = 0 
-                         /* Armazenamento na Session Storage */
-
-
                     console.log(response)
                     
-                    for(i = 0; i < response.length; i++){
+                for (i = 0; i < response.length; i++) {
+                    var jasonAtual = response[i]
 
-                        console.log(i)               
+
+                 time.innerHTML += `               
+                <div class="card_time">
+                <div class="dados_time">
+                <p style="color: yellow;">Nome time: <span style="color: white;">${jasonAtual.nome_time} </span></p> 
+                <p style="color: yellow;">Estado time:  <span style="color: white;">${jasonAtual.estado_time}</span></p> 
+                <p style="color: yellow;">Cidade time:  <span style="color: white;">${jasonAtual.cidade_time}</span></p>
+                <p style="color: yellow;">Região time:  <span style="color: white;">${nome_região}</span></p>
+                <p style="color: yellow;">Categoria time:  <span style="color: white;">${jasonAtual.categoria}</span> </p> 
+                </div>
+                <button><a href="${jasonAtual.formulario_time}">Se increva aqui</a></button> 
+                </div>
+
+                 `
+                }         
+                
                     
 
-                }
+                
+                    
+                    
+                    
+                
             
     })
 
