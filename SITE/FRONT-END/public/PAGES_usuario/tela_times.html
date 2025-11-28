@@ -13,7 +13,7 @@
 <body onload="listar_times()">
     <header>
         <div class="logo">
-            <img src="../assets/LOGO-removebg-preview.png" alt="img">
+            <img onclick="home()" src="../assets/LOGO-removebg-preview.png" alt="img">
         </div>
         <div class="mensagem_usuario" id="mensagem_usuario">
             <h1>ENCONTRE NOVOS TIMES!</h1>
@@ -44,6 +44,10 @@
 </html>
 
 <script>
+  function home() {
+        window.location = "../index.html"
+    }
+    
     function listar_times() {
         var regiao_usuario = sessionStorage.REGIAO_USUARIO
         var nome_região = ""
@@ -84,6 +88,10 @@
     }  ).then(function (response) {
             
                     console.log(response)
+
+                if (response.length == 0) {
+                    time.innerHTML = '<b style="color: red">Nenhum time cadastrado na sua região</b> '
+                }
                     
                 for (i = 0; i < response.length; i++) {
                     var jasonAtual = response[i]

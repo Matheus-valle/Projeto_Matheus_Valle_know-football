@@ -29,13 +29,7 @@ cidade_time VARCHAR(45),
 formulario_time VARCHAR(200),
 categoria VARCHAR(45)
 ); 
-SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categoria FROM TIMES WHERE região_time = 3;
-SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categoria FROM Usuario JOIN região ON região_usuario = idRegião JOIN TIMES ON região_time = idRegião WHERE idUsuario =4;
-INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
-	('Time fake A', 'Mato Grosso', 3, 'Cuiaba', 'sadasdasdasda',  'Masculino'),
-	('Time fake B', 'Mato Grosso do sul', 3, 'Campo grande', 'sadasdasdasda',  'Feminino');
-INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time, formulario_time) VALUES
-	('SP Storm', 'São Paulo',  'sudeste', 'São Paulo', 'askdjaskjsda');
+
 
 CREATE TABLE Usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -57,7 +51,6 @@ CREATE TABLE Usuario (
 );
 
 
-
 CREATE TABLE Metrica_atual (
 idMetrica INT AUTO_INCREMENT,
 fk_usuario INT,
@@ -73,3 +66,60 @@ CONSTRAINT fk_usuario_metrica_atual
 	FOREIGN KEY(fk_usuario)
 		REFERENCES Usuario (idUsuario)
 );
+SELECT * FROM Usuario;
+
+DESCRIBE Metrica_atual;
+SELECT * FROM Metrica_Atual  WHERE mes  IN(1,2,3,4,5,6);
+
+INSERT INTO Metrica_atual  (fk_usuario, mes, metrica_tiro40y, metrica_3cones, metrica_shuttle_20, metrica_shuttle_60, metrica_supino) VALUES
+	(4, 1, 5.90, 10.90, 20.90, 6.90, 2);
+    
+INSERT INTO Metrica_atual  (fk_usuario, mes, metrica_tiro40y, metrica_3cones, metrica_shuttle_20, metrica_shuttle_60, metrica_supino) VALUES
+	(4, 2, 5.90, 10.90, 20.90, 6.90, 2),
+	(4, 3, 5.90, 10.90, 20.90, 6.90, 2),
+	(4, 4, 5.90, 10.90, 20.90, 6.90, 2);
+    
+SELECT m.mes ,m.metrica_tiro40y FROM Metrica_atual as m JOIN Usuario ON idUsuario = m.fk_usuario
+	WHERE idUsuario = 4 AND mes IN (1,2,3,4,5,6);
+    
+UPDATE Metrica_atual SET metrica_tiro40y = 6.00
+	WHERE fk_usuario = 4 and mes = 4;
+    
+INSERT INTO  Metrica_atual (metrica_tiro40y, mes, fk_usuario) VALUES
+	(8.0, 1, 4);
+    
+    
+SELECT metrica_tiro40y FROM Metrica_atual WHERE mes IN (1,2,3,4,5,6) AND fk_usuario = 3;
+ SELECT mes, metrica_tiro40y FROM Metrica_atual WHERE mes IN (1,2,3,4,5,6) AND fk_usuario = 4;
+ 
+UPDATE Metrica_atual SET metrica_tiro40y = 10.0
+	WHERE fk_usuario = 4 and mes = 1;
+    
+SELECT * FROM Metrica_atual WHERE fk_usuario = 4;
+
+
+SELECT mes, metrica_tiro40y FROM Metrica_atual WHERE mes IN (1,2,3,4,5,6) AND fk_usuario = ${idUsuario};
+    
+SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categoria FROM TIMES WHERE região_time = 3;
+SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categoria FROM Usuario JOIN região ON região_usuario = idRegião JOIN TIMES ON região_time = idRegião WHERE idUsuario =4;
+INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
+	('Time fake A', 'Mato Grosso', 3, 'Cuiaba', 'sadasdasdasda',  'Masculino'),
+	('Time fake B', 'Mato Grosso do sul', 3, 'Campo grande', 'sadasdasdasda',  'Feminino');
+    
+SELECT * FROM Usuario;
+
+DELETE FROM Usuario
+		WHERE idUsuario = 11;
+INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
+	('SP Storm', 'São Paulo', 4, 'São Paulo', 'sadasdasdasda',  'Masculino');
+    
+INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
+	('Spartans', 'São Paulo', 4, 'São Paulo', 'sadasdasdasda',  'Masculino');
+    
+INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
+	('Rhynos', 'São Paulo', 4, 'Guarulhos', 'sadasdasdasda',  'Masculino');
+    
+    INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
+	('Galo Fa', 'Minas Gerais', 4, 'Belo Horizonte', 'sadasdasdasda',  'Masculino');
+INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time, formulario_time) VALUES
+	('SP Storm', 'São Paulo',  'sudeste', 'São Paulo', 'askdjaskjsda');

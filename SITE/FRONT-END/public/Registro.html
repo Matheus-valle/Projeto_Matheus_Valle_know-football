@@ -279,7 +279,7 @@
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-       
+       div_erro.innerHTML = `<b style="color: red;">Email já pode estar sendo usado</b>` 
       });
 
     return false;
