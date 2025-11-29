@@ -5,6 +5,7 @@ var medidaController = require("../controllers/medidaController");
 
 router.get("/ultimas/:idUsuario", function (req, res) {
     medidaController.buscarUltimasMetricas(req, res);
+    console.log("passou pelo router")
 });
 
 router.get("/tempo-real/:idAquario", function (req, res) {

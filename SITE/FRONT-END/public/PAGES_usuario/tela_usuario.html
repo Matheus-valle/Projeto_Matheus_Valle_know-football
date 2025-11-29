@@ -13,7 +13,7 @@
     <title>tela home</title>
 </head>
 
-<body onload="obterDadosGrafico(), mostrar_posição_usuario()">
+<body onload=" obterDadosGraficoMetricasCadastradas(), mostrar_posição_usuario()">
     <header>
         <div class="logo">
             <img onclick="home()" src="../assets/LOGO-removebg-preview.png" alt="img">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="calculo">
-                        <p>CALCULO UTILIZADO PARA AS METRICAS: X = * 12 * PI</p>
+                        <p style="font-size: 20px;">CALCULO UTILIZADO PARA AS METRICAS: <span style="color: rgb(77, 100, 140);">PROJEÇÃO MÊS = FREQUENCIA * TEMPO ATUAL / 100</span> </p>
                     </div>
 
                     <div class="card">
@@ -117,6 +117,11 @@
 
     function home() {
         window.location = "../index.html"
+    }
+
+    function cadastrar_metrica_tiro40y() {
+       var mes =  Number(Input_mes.value)
+       var tempo = Number(input_tempo.value)  
     }
 
     function mostrar_posição_usuario() {
@@ -170,69 +175,35 @@
     }
 
 
-    function obterDadosGrafico() {
+    function obterDadosGraficoMetricasCadastradas() {
+        var resposta_metricas
         var idUsuario = sessionStorage.ID_USUARIO
+        var resposta_acompanhamento1 
+        var resposta_acompanhamento2
+        var resposta_acompanhamento3 
+        var resposta_acompanhamento4
+        var resposta_acompanhamento5 
+        var resposta_acompanhamento6
+          
+
+
+
 
         fetch(`/medidas/MetricasCadastradas/${idUsuario}`, {
                 cache: 'no-store'
             }).then(function(response) {
                 if (response.ok) {
                     response.json().then(function(resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                         resposta.reverse();
 
-
-                        console.log(resposta[0].metrica_tiro40y)
-                        var tiro40 =  parseFloat(resposta[0].metrica_tiro40y)
-                        plotar_grafico( parseFloat (tiro40))
-                                            });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function(error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-
-
-
-
-        fetch(`/medidas/ultimas/${idUsuario}`, {
-                cache: 'no-store'
-            }).then(function(response) {
-                if (response.ok) {
-                    response.json().then(function(resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        resposta.reverse();
-
-                        console.log(resposta[0].metrica_tiro40y)
-                        for (i = 0; i < resposta.length; i++) {
-                            if (i == 0) {
-                                var mes_ulimo_dado1 = parseFloat(resposta[i].metrica_tiro40y)
-
-                                plotar_grafico(mes_ulimo_dado1)
+                        resposta_metricas = resposta[0]
+                         if (( resposta_acompanhamento1 != undefined  || resposta_acompanhamento2 != undefined ||
+                                resposta_acompanhamento3 != undefined || resposta_acompanhamento4 != undefined ||
+                                resposta_acompanhamento5 != undefined || resposta_acompanhamento6 != undefined
+                            ) && resposta_metricas != undefined) {
+                                plotar_grafico(resposta_acompanhamento1, resposta_acompanhamento2, resposta_acompanhamento3,
+                                resposta_acompanhamento4, resposta_acompanhamento5,resposta_acompanhamento6 , resposta_metricas)
                             }
-                            if (i == 1) {
-                                mes_ulimo_dado2 = parseFloat(resposta[i].metrica_tiro40y)
-
-                            }
-                            if (i == 2) {
-                                mes_ulimo_dado3 = parseFloat(resposta[i].metrica_tiro40y)
-                            }
-
-                            if (i == 3) {
-                                mes_ulimo_dado4 = parseFloat(resposta[i].metrica_tiro40y)
-                            }
-
-
-                            if (i == 4) {
-                                mes_ulimo_dado5 = parseFloat(resposta[i].metrica_tiro40y)
-                            }
-
-                            if (i == 5) {
-                                mes_ulimo_dado6 = parseFloat(resposta[i].metrica_tiro40y)
-                            }
-                        }
 
                     });
                 } else {
@@ -242,28 +213,164 @@
             .catch(function(error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+
+      
+
+        fetch(`/medidas/ultimas/${idUsuario}`, {
+                cache: 'no-store'
+            }).then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        resposta.reverse();
+
+                        for(i = 0; i <6; i ++ ){
+                            if(resposta[i] == undefined) {
+                                resposta[i] = resposta[i] = {mes: null, metrica_tiro40y: null};  
+                            }
+                            
+                        }
+
+
+                        var ordenamento_mes = [[], [], [], [], [], []]
+
+                    
+                            for(i = 0; i< 6; i++) {
+                                var momento_lista = resposta[i]
+                                if(resposta[i].mes != null) {
+
+                                    if(resposta[i].mes == 1) {
+                                        ordenamento_mes[0].push(resposta[i])
+                                    }
+
+
+                                    if(resposta[i].mes == 2) {
+                                        ordenamento_mes[1].push(resposta[i])
+                                    }
+
+
+                                    if(resposta[i].mes == 3) {
+                                        ordenamento_mes[2].push(resposta[i])
+                                    }
+
+
+                                    if(resposta[i].mes == 4) {
+                                        ordenamento_mes[3].push(resposta[i])
+                                    }
+
+                                    if(resposta[i].mes == 5) {
+                                        ordenamento_mes[4].push(resposta[i])
+                                    }
+
+
+                                    if(resposta[i].mes == 6) {
+                                        ordenamento_mes[5].push(resposta[i])
+                                    }
+                                }
+
+                            } 
+
+                            if(ordenamento_mes[0].length == 0) {
+                                ordenamento_mes[0].push({mes: null, metrica_tiro40y: null})
+                                resposta_acompanhamento1 = ordenamento_mes[0][0]
+                            } else {
+                                resposta_acompanhamento1 =  ordenamento_mes[0][0]
+                            }
+
+                            if(ordenamento_mes[1].length == 0) {
+                                ordenamento_mes[1].push({mes: null, metrica_tiro40y: null})
+                                resposta_acompanhamento2 = ordenamento_mes[1][0]
+                            } else {
+                                resposta_acompanhamento2 =  ordenamento_mes[1][0]
+                            }
+
+                            if(ordenamento_mes[2].length == 0) {
+                                ordenamento_mes[2].push({mes: null, metrica_tiro40y: null})
+                                resposta_acompanhamento3 = ordenamento_mes[2][0]
+                            } else {
+                                resposta_acompanhamento3 =  ordenamento_mes[2][0]
+                            }
+
+                        
+                            if(ordenamento_mes[3].length == 0) {
+                                ordenamento_mes[3].push({mes: null, metrica_tiro40y: null})
+                                resposta_acompanhamento4 = ordenamento_mes[3][0]
+                            } else {
+                                resposta_acompanhamento4 =  ordenamento_mes[3][0]
+                            }
+
+
+                            if(ordenamento_mes[4].length == 0) {
+                                ordenamento_mes[4].push({mes: null, metrica_tiro40y: null})
+                                resposta_acompanhamento5 = ordenamento_mes[4][0]
+                            } else {
+                                resposta_acompanhamento5 =  ordenamento_mes[4][0]
+                            }
+
+
+                            if(ordenamento_mes[5].length == 0) {
+                                ordenamento_mes[5].push({mes: null, metrica_tiro40y: null})
+                                resposta_acompanhamento6 = ordenamento_mes[5][0]
+                            } else {
+                                resposta_acompanhamento6 =  ordenamento_mes[5][0]
+                            }      
+                        
+
+        
+
+                            if (( resposta_acompanhamento1 != undefined  || resposta_acompanhamento2 != undefined ||
+                                resposta_acompanhamento3 != undefined || resposta_acompanhamento4 != undefined ||
+                                resposta_acompanhamento5 != undefined || resposta_acompanhamento6 != undefined
+                            ) && resposta_metricas != undefined) {
+                                plotar_grafico(resposta_acompanhamento1, resposta_acompanhamento2, resposta_acompanhamento3,
+                                resposta_acompanhamento4, resposta_acompanhamento5,resposta_acompanhamento6 , resposta_metricas)
+                            }
+                        
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
     }
 
 
 
-    function plotar_grafico(tiro40, mes_ulimo_dado1) {
-        parseInt(tiro40)
-        console.log(mes_ulimo_dado1)
-        tiro40 = 5.92
+    function plotar_grafico(resposta_acompanhamento1, resposta_acompanhamento2, resposta_acompanhamento3,
+                                resposta_acompanhamento4, resposta_acompanhamento5,resposta_acompanhamento6 , resposta_metricas) {
+
+
+        var idUsuario = sessionStorage.ID_USUARIO
+                                             
+
+
+        var metrica_cadastrado1 = parseFloat( resposta_acompanhamento1.metrica_tiro40y)
+        var metrica_cadastrado2 = parseFloat(resposta_acompanhamento2.metrica_tiro40y)
+        var metrica_cadastrado3 = parseFloat(resposta_acompanhamento3.metrica_tiro40y)
+       var metrica_cadastrado4 = parseFloat(resposta_acompanhamento4.metrica_tiro40y)
+        var metrica_cadastrado5 = parseFloat(resposta_acompanhamento5.metrica_tiro40y)
+        var metrica_cadastrado6 = parseFloat(resposta_acompanhamento6.metrica_tiro40y)  
+
+        console.log(metrica_cadastrado4)
+            
         
-        // calculando a projeção      
-        var mes0 = tiro40
-        var mes1 =  mes0 -   ( 2 * tiro40 / 100)  
-        var mes2 = mes1 -   ( 2 * mes1 / 100)  
-        var mes3 = mes2 -   ( 2 * mes2 / 100)   
-        var mes4 = mes3 -   ( 2 * mes3 / 100)   
-        var mes5 = mes4 -   ( 2 * mes4 / 100)   
-        var mes7 = mes5 -   ( 2 * mes5 / 100)  
+
+        var frequencia = resposta_metricas.frequencia_treino
+        var mes0 =  resposta_metricas.metrica_tiro40y
+        var mes1 = mes0 - (frequencia * resposta_metricas.metrica_tiro40y / 100)
+        var mes2 = mes1 - (frequencia * mes1 / 100)
+        var mes3 = mes2 - (frequencia * mes2 / 100)
+        var mes4 = mes3 - (frequencia * mes3 / 100)
+        var mes5 = mes4 - (frequencia * mes4 / 100)
+        var mes7 = mes5 - (frequencia * mes5 / 100)
         console.log('iniciando plotagem do gráfico...');
 
         let labels = [];
 
-        
+        console.log(mes0)
+    
         let dados = {
             labels: labels,
             labels: ['Inicio', 'Mês 1', 'Mês 2', 'Mês 3', 'Mês 4', 'Mês 5', 'Mês 6'],
@@ -273,32 +380,33 @@
                 },
                 {
                     label: 'Em andamento',
-                    data: [mes0],
+                    data: [mes0, metrica_cadastrado1, metrica_cadastrado2, metrica_cadastrado3, metrica_cadastrado4, metrica_cadastrado5, metrica_cadastrado6]  
 
                 }
             ]
         };
 
 
-        
-        // Inserindo valores recebidos em estrutura para plotar o gráfico
+
     
-        dados.datasets[0].data.push(tiro40);
-        dados.datasets[1].data.push(tiro40);
-
-
-        // Criando estrutura para plotar gráfico - config
         const config = {
             type: 'line',
             data: dados,
         };
 
-        // Adicionando gráfico criado em div na tela
+
         let myChart = new Chart(
             document.getElementById(`myChart`),
             config
         );
 
-
+     
     }
+
+
+   
+
+
+
+   
 </script>

@@ -7,6 +7,8 @@ function buscarMetricasCadastradas(idUsuario) {
 	FROM Usuario WHERE idUsuario = ${idUsuario}; ` 
 
 
+    console.log("passou pelo controller")
+
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 
