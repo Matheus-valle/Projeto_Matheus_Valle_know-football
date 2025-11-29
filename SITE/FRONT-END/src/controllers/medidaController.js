@@ -1,13 +1,74 @@
 var medidaModel = require("../models/medidaModel");
 
+
+function cadastrar_tiro40y(req, res) {
+
+    var mes = req.body.serverMes;
+    var tempo = req.body.serverTemmpo;
+    var idUsuario = req.body.serveridUsuario;
+
+    console.log(idUsuario, mes, tempo)
+    
+
+    medidaModel.cadastrarTiro40y(idUsuario, mes, tempo)
+                .then(
+                function (resultado) {
+                    res.json(resultado);
+                    
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    
+
+}
+
+function editar_tiro40y(req, res) {
+
+    console.log("passou pelo editar")
+
+    var mes = req.body.serverMes;
+    var tempo = req.body.serverTemmpo;
+    var idUsuario = req.body.serveridUsuario;
+
+    console.log(idUsuario, mes, tempo)
+    
+
+    medidaModel.editarTiro40y(idUsuario, mes, tempo)
+                .then(
+                function (resultado) {
+                    res.json(resultado);
+                    
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    
+
+}
+
 function buscarUltimasMetricas(req, res) {
 
     console.log("Passou pelo controller")
-    const limite_linhas = 6;
+    
 
     var idUsuario = req.params.idUsuario;
 
-    console.log(`Recuperando as ultimas medidas`);
+   
 
     medidaModel.buscarUltimasMetricas(idUsuario).then(function (resultado) {
         if (resultado.length > 0) {
@@ -50,6 +111,8 @@ function buscarMetricasCadastradas(req, res) {
 
 module.exports = {
     buscarUltimasMetricas,
-    buscarMetricasCadastradas
+    buscarMetricasCadastradas,
+    cadastrar_tiro40y,
+    editar_tiro40y
 
 }
