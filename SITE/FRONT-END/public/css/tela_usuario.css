@@ -33,7 +33,7 @@ header img {
     background-color: #0B9FEB;
     color: white;
     width: 1000px;
-    height: 70px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,13 +107,16 @@ header img {
     color: white;
 }
 
+.dashboard h1 {
+    font-size: 30px;
+}
 .card_dashboard {
     background-color: #0E2C61;
     display: flex;
     flex-direction: column;
-    width: 950px;
+    width: 570px;
     border-radius: 20px;
-    height: 1050px;
+    height:  650px;
     gap: 20px;
     padding: 20px;
 }
@@ -131,16 +134,21 @@ header img {
     align-items: center;
 }
 
+.titulo_dashboard h1 {
+    font-size: 15px;
+}
+
 .KPI_1  .KP1_TEMPO{
-    width: 300px;
-    height: 60px;
+    width: 170px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #FBD800;
-    border-radius: 20px;
+    border-radius: 15px;
     
-    font-size: 30px;
+    font-size: 20px;
+    color: black;
 }
 
 
@@ -153,14 +161,14 @@ header img {
 }
 
 .KPI_2  .KP2_FUTEBOL{
-    width: 300px;
-    height: 60px;
+    width: 170px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #FBD800;
-    border-radius: 20px;
-    
+    border-radius: 15px;
+    color: black;
     font-size: 30px;
 }
 
@@ -173,13 +181,13 @@ header img {
 }
 
 .KPI_3  .KP3_GANHO{
-    width: 300px;
-    height: 60px;
+    width: 170px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fb0000;
-    border-radius: 20px;
+    border-radius: 15px;
     
     font-size: 30px;
 }
@@ -188,47 +196,85 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #8AD9FF;
-    height: 60px;
+    background-color: #324d5a;
+    height: 50px;
     font-size: 30px;
-    border-radius: 20px;
+    border-radius: 15px;
+}
+
+.mensagem_usuario {
+    height: 60px;
+    gap: 45px;
+    margin: 20;
+}
+
+.posição_calculo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #358948;
+    height: 30px;
+    font-size: 25px;
+    border-radius: 10px;
 }
 
 
 .card {
     background-color: white;
     border-radius: 20px;
-    height: 600px;
+    height: 250px;
+    width: 50;
+    display: flex;
+    justify-content: center;
 }
 
 .registros {
-    height: 300px;
+   
+    height: 140px;
+    width: 490px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
+   
 }
 
 .inputs {
-    font-size: 20px;
+    font-size: 10px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: 400px;
+    gap: 25px;
+    width: 100px;
 }
 
 .botões_registro {
-    font-size: 20px;
+    font-size: 10px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
     
-    width: 350px;
+    width: 75px;
 }
 
 .inputs input {
     border: 7px solid #2A7FE8;
-    height: 70px;
-    width: 380px;
+    height: 26px;
+    width: 190px;
+    color:  #0E2C61;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+.inputs select {
+    border: 7px solid #2A7FE8;
+    height: 35px;
+    width: 200px;
     color:  #0E2C61;
     font-family:"Lilita One", sans-serif ;
     font-size: 20px;
@@ -244,9 +290,9 @@ header img {
            background-color: #2A7FE8 ;
     color: white;
     font-family: "Lilita One", sans-serif;
-    font-size: 40px;
-    height: 70px;
-    width: 280px;
+    font-size: 15px;
+    height: 40px;
+    width: 140px;
     border: 7px solid #8AD9FF;
     border-radius: 20px;
 

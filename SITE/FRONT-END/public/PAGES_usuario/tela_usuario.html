@@ -50,35 +50,42 @@
             </div>
             <div class="dashboard">
                 <div class="titulo">
-                    <h1>SUAS ULTIMAS PROJEÇÕES / RESULTADOS:</h1>
+                    <h1 style="color: rgb(255, 140, 0);">SEU ACOMPANHAMENTO PARA UMA SELETIVA DE FUTEBOL AMERICANO:</h1>
                 </div>
                 <div class="card_dashboard">
                     <div class="titulo_dashboard">
-                        <h1>TIRO 40Y</h1>
+                        <h1 style="font-size: 20px;">Corrida de 40 jardas (36)Metros</h1>
                     </div>
+                    <div class="mensagens_usuario">
+                    <div class="calculo">
+                        <p style="font-size: 10px;">CALCULO UTILIZADO PARA AS METRICAS: <span style="color: rgb(107, 255, 54);">PROJEÇÃO NOVO MÊS = MES_ANTERIOR -  (FREQUENCIA * TEMPO_MES ATUAL / 100)</span> </p>
+                    </div>
+                    <br>
+                    <div class="posição_calculo">
+                        <p style="font-size: 13px;">PARA SUA POSIÇÃO <span style="color: rgb(0, 0, 0);"   id="posição_card"></span> O IDEAL PARA UM INICIANTE É <span style="color: rgb(0, 0, 0);" id="tiro_40y_card"></span></p>
+                    </div>
+                    </div>
+
 
                     <div class="KPIS">
                         <div class="KPI_1">
-                            <p style="font-size: 15px;">TAXA DE REDUÇÃO DE TEMPO:</p>
+                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
                             <div class="KP1_TEMPO">
                                 <p>2/3 SEGS</p>
                             </div>
                         </div>
-                        <div class="KPI_2">
-                            <p style="font-size: 15px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
-                            <div class="KP2_FUTEBOL">
-                                <p>MÉDIA</p>
+                        <div class="KPI_2" id="KPI_2">
+                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
+                            <div id="kpi_2"   class="KP2_FUTEBOL" style=" background-color:  rgb(255, 255, 255); color: black;">
+                                <p id="texto_kp2">NDA</p>
                             </div>
                         </div>
                         <div class="KPI_3">
-                            <p style="font-size: 15px;">GANHO DE TEMPO:</p>
+                            <p style="font-size: 10px;">GANHO DE TEMPO:</p>
                             <div class="KP3_GANHO">
                                 <p>10 SEGS</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="calculo">
-                        <p style="font-size: 20px;">CALCULO UTILIZADO PARA AS METRICAS: <span style="color: rgb(77, 100, 140);">PROJEÇÃO MÊS = FREQUENCIA * TEMPO ATUAL / 100</span> </p>
                     </div>
 
                     <div class="card">
@@ -88,8 +95,15 @@
                     <div class="registros">
                         <div class="inputs">
                             <div class="input1">
-                                <p>DIGITE O MÊS:</p>
-                                <input type="number" id="Input_mes">
+                                <p>SELECIONE O MÊS:</p>
+                                <select id="Input_mes">
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                    <option value=6>6</option>
+                                </select>
                             </div>
                             <div class="input2">
                                 <p>DIGITE O TEMPO:</p>
@@ -109,8 +123,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <br>
+                <br>
+
+            
+      
     </div>
 </body>
 
@@ -125,6 +142,8 @@
     function home() {
         window.location = "../index.html"
     }
+
+
 
     function cadastrar_metrica_tiro40y() {
 
@@ -158,6 +177,14 @@
         if (resposta.ok) {
     
            div_erro.innerHTML = `<b style="color: green;">Tempo cadastrado com sucesso</b>` 
+
+
+                   if (myChart) {
+            console.log("o chart js está no antigo")
+            myChart.destroy()
+        }
+
+           obterDadosGraficoMetricasCadastradas(idUsuario)
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
@@ -203,6 +230,13 @@ function editar_metrica_tiro40y() {
         if (resposta.ok) {
     
            div_erro.innerHTML = `<b style="color: green;">Tempo editado com sucesso!</b>` 
+            if (myChart) {
+            console.log("o chart js está no antigo")
+            myChart.destroy()
+        }
+
+
+           obterDadosGraficoMetricasCadastradas(idUsuario)
           
           
         } else {
@@ -217,7 +251,11 @@ function editar_metrica_tiro40y() {
     return false;
     }
 }
-    
+            var  tempo_minimo_40y = 0
+        var minimo_cone3 = 0
+        var minimo_shuttle_20 = 0
+        var minimo_shuttle_60 = 0
+        var minimo_supino = 0
 
     function mostrar_posição_usuario() {
 
@@ -225,36 +263,76 @@ function editar_metrica_tiro40y() {
         var peso = parseFloat(sessionStorage.PESO_USUARIO)
         var altura = parseFloat(sessionStorage.ALTURA_USUARIO)
         var img = ""
+ 
 
 
         if (peso > 0 && altura > 0) {
             posição = `Running Back`
             img = `<img src="../assets/runningback_icon.jpg">`
+            tempo_minimo_40y = 4.32 + (4.32 * 0.30 )
+            minimo_cone3 = 6.90 + (6.90 * 0.30)
+            minimo_shuttle_20 = 4.6 + (4.6 * 0.30)
+            minimo_shuttle_60 = 9.2 + (9.2 * 0.30)
+            minimo_supino = 13 - (13 * 0.80)
 
             if (peso > 75 && altura > 1.75) {
                 posição = `Corner Back`
                 img = `<img src="../assets/cornerback_icon.jpg">`
+                tempo_minimo_40y = 4.59+ (4.59 * 0.30 )
+                minimo_cone3 = 6.71 + (6.71 * 0.30)
+                minimo_shuttle_20 = 4.29 + (4.29 * 0.30)
+                minimo_shuttle_60 = 9 + (9 * 0.30)
+                minimo_supino = 12 - (12 * 0.80)
 
                 if (peso > 80 && altura > 1.80) {
                     posição = `Wide Receiver`
                     img = `<img src="../assets/widereceiver_icon.jpg">`
+                tempo_minimo_40y = 4.50+ (4.50 * 0.30 )
+                minimo_cone3 = 6.65 + (6.65 * 0.30)
+                minimo_shuttle_20 = 4.19 + (4.19 * 0.30)
+                minimo_shuttle_60 = 8.20 + (8.20 * 0.30)
+                minimo_supino = 11 - (11 * 0.80)
+                   
                     if (peso > 100 && altura > 1.82) {
                         posição = `Linebacker`
                         img = `<img src="../assets/linebacker_icon.jpeg">`
-
+                tempo_minimo_40y = 4.60+ (4.60 * 0.30 )
+                minimo_cone3 = 6.65 + (6.65 * 0.30)
+                minimo_shuttle_20 = 4.19 + (4.19 * 0.30)
+                minimo_shuttle_60 = 8.20 + (8.20 * 0.30)
+                minimo_supino = 11 - (11 * 0.80)
                         if (peso > 104 && altura > 1.83) {
                             posição = `Quarter back`
                             img = `<img src="../assets/quarterback_icon.jpeg">`
-
+                tempo_minimo_40y = 4.60+ (4.60 * 0.30 )
+                minimo_cone3 = 6.65 + (6.65 * 0.30)
+                minimo_shuttle_20 = 4.19 + (4.19 * 0.30)
+                minimo_shuttle_60 = 8.20 + (8.20 * 0.30)
+                minimo_supino = 11 - (11 * 0.80)
                             if (peso > 106 && altura > 1.85) {
                                 posição = `Tight end`
                                 img = `<img src="../assets/tightend_icon.jpg">`
+                                                tempo_minimo_40y = 4.70+ (4.70 * 0.30 )
+                                                 minimo_cone3 = 7.21 + (7.21 * 0.30)
+                                                 minimo_shuttle_20 = 4.40 + (4.40 * 0.30)
+                                                    minimo_shuttle_60 = 9.0 + (9.0 * 0.30)
+                                              minimo_supino = 16 - (16 * 0.80)
                                 if (peso > 115 && altura > 1.87) {
                                     posição = `Defensive Lineman`
                                     img = `<img src="../assets/defensivelineman_icon.jpeg">`
+                                                    tempo_minimo_40y = 4.83+ (4.83 * 0.30 )
+                                                 minimo_cone3 = 7.18 + ( 7.18* 0.30)
+                                                minimo_shuttle_20 = 4.60 + (4.60 * 0.30)
+                                                minimo_shuttle_60 = 9.20 + (9.20 * 0.30)
+                                             minimo_supino = 20 - (20 * 0.90)
                                     if (peso > 125 && altura > 1.90) {
                                         posição = `Offensive Lineman`
                                         img = `<img src="../assets/ofensivelineman_icon.jpeg">`
+                                                        tempo_minimo_40y = 4.91+ (4.91 * 0.30 )
+                minimo_cone3 = 7.38 + (7.38 * 0.30)
+                minimo_shuttle_20 = 4.70 + (4.70 * 0.30)
+                minimo_shuttle_60 = 9.40 + (9.40 * 0.30)
+                minimo_supino = 23 - (23 * 0.30)
 
                                     }
                                 }
@@ -266,6 +344,11 @@ function editar_metrica_tiro40y() {
         }
         img_usuario.innerHTML += img
         p_posicao.innerHTML = posição
+        posição_card.innerHTML = posição
+        tiro_40y_card.innerHTML = tempo_minimo_40y.toFixed(2) 
+
+
+
 
     }
 
@@ -280,7 +363,6 @@ function editar_metrica_tiro40y() {
         var resposta_acompanhamento5 
         var resposta_acompanhamento6
           
-
 
 
 
@@ -317,6 +399,8 @@ function editar_metrica_tiro40y() {
                 if (response.ok) {
                     response.json().then(function(resposta) {
                         resposta.reverse();
+
+
 
                         for(i = 0; i <6; i ++ ){
                             if(resposta[i] == undefined) {
@@ -419,6 +503,38 @@ function editar_metrica_tiro40y() {
                                 plotar_grafico(resposta_acompanhamento1, resposta_acompanhamento2, resposta_acompanhamento3,
                                 resposta_acompanhamento4, resposta_acompanhamento5,resposta_acompanhamento6 , resposta_metricas)
                             }
+
+
+                                       var ultimo_mes = 0
+
+            if (resposta_acompanhamento6.mes != null) {
+                ultimo_mes = resposta_acompanhamento6
+            } else if (resposta_acompanhamento5.mes != null) {
+                ultimo_mes = resposta_acompanhamento5
+            } else if (resposta_acompanhamento4.mes != null) {
+                ultimo_mes = resposta_acompanhamento4
+            } else if (resposta_acompanhamento3.mes != null)  {
+                ultimo_mes = resposta_acompanhamento3
+            } else if (resposta_acompanhamento2.mes != null) {
+                ultimo_mes = resposta_acompanhamento2
+            } else  {
+                ultimo_mes = resposta_acompanhamento1
+            }
+
+            if(ultimo_mes.metrica_tiro40y  < tempo_minimo_40y) { 
+
+                KPI_2.innerHTML =  `                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
+                            <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  green; color: white;">
+                                <p id="texto_kp2">MUITO BOA</p>`                        
+                            
+            } else if (ultimo_mes.metrica_tiro40y  < tempo_minimo_40y + (tempo_minimo_40y * 0.20)) {
+                                KPI_2.innerHTML =  `                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
+                            <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  yellow; color: white;">
+                                <p id="texto_kp2">BOA</p>`    
+            }
+
+
+            console.log(ultimo_mes)
                         
                     });
                 } else {
@@ -428,6 +544,10 @@ function editar_metrica_tiro40y() {
             .catch(function(error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+
+
+
+
 
     }
 
@@ -449,8 +569,7 @@ function editar_metrica_tiro40y() {
         var metrica_cadastrado5 = parseFloat(resposta_acompanhamento5.metrica_tiro40y)
         var metrica_cadastrado6 = parseFloat(resposta_acompanhamento6.metrica_tiro40y)  
 
-    
-            
+      console.log(resposta_acompanhamento1)
         
 
         var frequencia = resposta_metricas.frequencia_treino
@@ -469,13 +588,14 @@ function editar_metrica_tiro40y() {
     
         let dados = {
             labels: labels,
-            labels: ['Inicio', 'Mês 1', 'Mês 2', 'Mês 3', 'Mês 4', 'Mês 5', 'Mês 6'],
+            labels: ['Tempo', 'Mês 1', 'Mês 2', 'Mês 3', 'Mês 4', 'Mês 5', 'Mês 6'],
+        
             datasets: [{
-                    label: 'Projeção',
+                    label: 'Sua Projeção',
                     data: [mes0, mes1, mes2, mes3, mes4, mes5, mes7]
                 },
                 {
-                    label: 'Em andamento',
+                    label: 'Em andamento', 
                     data: [mes0, metrica_cadastrado1, metrica_cadastrado2, metrica_cadastrado3, metrica_cadastrado4, metrica_cadastrado5, metrica_cadastrado6]  
 
                 }
@@ -489,6 +609,8 @@ function editar_metrica_tiro40y() {
             type: 'line',
             data: dados,
         };
+
+        console.log(myChart)
 
 
 
