@@ -68,10 +68,10 @@
 
 
                     <div class="KPIS">
-                        <div class="KPI_1">
+                        <div class="KPI_1" id="KPI_1">
                             <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
-                            <div class="KP1_TEMPO">
-                                <p>2/3 SEGS</p>
+                            <div class="KP1_TEMPO" style=" background-color:  rgb(255, 255, 255); color: black;">
+                                <p>NDA</p>
                             </div>
                         </div>
                         <div class="KPI_2" id="KPI_2">
@@ -80,10 +80,10 @@
                                 <p id="texto_kp2">NDA</p>
                             </div>
                         </div>
-                        <div class="KPI_3">
-                            <p style="font-size: 10px;">GANHO DE TEMPO:</p>
-                            <div class="KP3_GANHO">
-                                <p>10 SEGS</p>
+                        <div class="KPI_3" id="KPI_3">
+                            <p style="font-size: 10px;">GANHO DE TEMPO TOTAL</p>
+                            <div class="KP3_GANHO"   style=" background-color:  rgb(255, 255, 255); color: black;">
+                                <p>NDA </p>
                             </div>
                         </div>
                     </div>
@@ -506,19 +506,26 @@ function editar_metrica_tiro40y() {
 
 
                                        var ultimo_mes = 0
+                                       var penultimo_mes
 
             if (resposta_acompanhamento6.mes != null) {
                 ultimo_mes = resposta_acompanhamento6
+                penultimo_mes = resposta_acompanhamento5
             } else if (resposta_acompanhamento5.mes != null) {
                 ultimo_mes = resposta_acompanhamento5
+                penultimo_mes = resposta_acompanhamento4
             } else if (resposta_acompanhamento4.mes != null) {
                 ultimo_mes = resposta_acompanhamento4
+                penultimo_mes = resposta_acompanhamento3
             } else if (resposta_acompanhamento3.mes != null)  {
                 ultimo_mes = resposta_acompanhamento3
+                penultimo_mes = resposta_acompanhamento2
             } else if (resposta_acompanhamento2.mes != null) {
                 ultimo_mes = resposta_acompanhamento2
+                penultimo_mes = resposta_acompanhamento1
             } else  {
                 ultimo_mes = resposta_acompanhamento1
+                penultimo_mes = resposta_acompanhamento1
             }
 
             if(ultimo_mes.metrica_tiro40y  < tempo_minimo_40y) { 
@@ -527,12 +534,67 @@ function editar_metrica_tiro40y() {
                             <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  green; color: white;">
                                 <p id="texto_kp2">MUITO BOA</p>`                        
                             
-            } else if (ultimo_mes.metrica_tiro40y  < tempo_minimo_40y + (tempo_minimo_40y * 0.20)) {
+            } else  if (ultimo_mes.metrica_tiro40y  < (tempo_minimo_40y + (tempo_minimo_40y * 0.30)) && ultimo_mes.metrica_tiro40y >= tempo_minimo_40y ) {
                                 KPI_2.innerHTML =  `                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
-                            <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  yellow; color: white;">
+                            <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  yellow; color: black;">
                                 <p id="texto_kp2">BOA</p>`    
+            } else {
+                                                KPI_2.innerHTML =  `                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
+                            <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  red; color: white;">
+                                <p id="texto_kp2">RUIM</p>`    
             }
 
+            var calculo_evolução = parseFloat(penultimo_mes.metrica_tiro40y) -  parseFloat(ultimo_mes.metrica_tiro40y)
+            console.log(calculo_evolução)
+            if (calculo_evolução > 0.3) {
+                KPI_1.innerHTML = `
+                                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
+                            <div class="KP1_TEMPO" style=" background-color:  green; color: white;">
+                                <p>${calculo_evolução.toFixed(1)}</p>
+                            </div>
+                ` 
+            }
+            else if (calculo_evolução > 0.1) {
+                KPI_1.innerHTML = `
+                                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
+                            <div class="KP1_TEMPO" style=" background-color:  yellow; color: white;">
+                                <p>${calculo_evolução.toFixed(1)}</p>
+                            </div>
+                ` 
+            } else {
+                                KPI_1.innerHTML = `
+                                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
+                            <div class="KP1_TEMPO" style=" background-color:  red; color: white;">
+                                <p>${calculo_evolução.toFixed(1)}!</p> `
+                   
+            }
+
+          
+        
+
+            var evolução_total =   ultimo_mes.metrica_tiro40y - parseFloat( resposta_metricas.metrica_tiro40y) 
+            console.log("evolucao total é" +evolução_total)
+
+             if (evolução_total > -0.3) {
+                                KPI_3.innerHTML = `
+                                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
+                            <div class="KP1_TEMPO" style=" background-color:  red; color: white;">
+                                <p>${calculo_evolução.toFixed(1)}!</p> `
+            }
+            else if (evolução_total > -0.6) {
+                KPI_3.innerHTML = `
+                                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
+                            <div class="KP1_TEMPO" style=" background-color:  red; color: white;">
+                                <p>${calculo_evolução.toFixed(1)}!</p> `
+                
+            } else {
+                                KPI_3.innerHTML = `
+                                                                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
+                            <div class="KP1_TEMPO" style=" background-color:  red; color: white;">
+                                <p>${calculo_evolução.toFixed(1)}!</p> ` 
+           
+                   
+            }
 
             console.log(ultimo_mes)
                         
@@ -597,6 +659,11 @@ function editar_metrica_tiro40y() {
                 {
                     label: 'Em andamento', 
                     data: [mes0, metrica_cadastrado1, metrica_cadastrado2, metrica_cadastrado3, metrica_cadastrado4, metrica_cadastrado5, metrica_cadastrado6]  
+
+                },
+                                {
+                    label: 'Recomendado Posição', 
+                    data: [tempo_minimo_40y, tempo_minimo_40y, tempo_minimo_40y, tempo_minimo_40y, tempo_minimo_40y, tempo_minimo_40y, tempo_minimo_40y]  
 
                 }
             ]
