@@ -1,5 +1,17 @@
 var medidaModel = require("../models/medidaModel");
 
+/* 
+function buscarAltura_peso(req,res) {
+    idUsuario = req.body.idUsuario
+
+    medidaModel.buscarAltura_peso(idUsuario).then(
+
+        
+    ) {
+        res.json(resultado)
+    }
+}
+*/ 
 
 function cadastrar_tiro40y(req, res) {
 

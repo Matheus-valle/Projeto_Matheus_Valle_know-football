@@ -13,8 +13,8 @@
     <title>Regras</title>
 </head>
 
-<body>
-    <header>
+<body onload="setarTodosInvisiveis()">
+    <header >
         <img src="./assets/LOGO.png" alt="img" class="logo">
         <div class="header_textos">
             <ul>
@@ -25,58 +25,183 @@
                 <li><a href="Equipamentos.html">EQUIPAMENTOS</a></li>
             </ul>
             <div class="botão_login_registro">
-               <a  style="color: white; font-size: 20px; align-items: center;" href="./Login.html">LOGIN</a>
+                <a style="color: white; font-size: 20px; align-items: center;" href="./Login.html">LOGIN</a>
             </div>
             <div class="botão_login_registro">
-               <a  style="color: white; font-size: 20px; align-items: center;" href="./Registro.html">REGISTRO</a>
+                <a style="color: white; font-size: 20px; align-items: center;" href="./Registro.html">REGISTRO</a>
             </div>
         </div>
     </header>
 
-    <section class="titulo">
+    <section class="posições">
+
         <h1>As Regras do Futebol Americano</h1>
-    </section>
 
-    <section class="regras">
-        <div class="card_contexto">
+        <div class="caixa_origem">
+            <div class="posições_ataque" id="posições_ataque">
+                <div class="texto_e_botao_ataque" id="respota_ataque">
 
-            <div class="historia_botão">
-                <h1>A historia do futebol americano + <br> Como funciona a nfl</h1>
-                <div class="botão_+">
-                    <h1 style="font-size: 30px;">+<h1>
+                    <div class="titulo_posições">
+                        <h1>Contexto do futebol americano</h1>
+                        <h1 onclick="mostrar_contexto()" id="botao_contexto">+</h1>
+                    </div>
+
                 </div>
-            </div>
-            <div class="historia">
-                <p>O Futebol Americano nasceu em 1869 a partir de uma junção de estilos de jogo praticados em universidades nos Estados Unidos como uma unificação de vários estilos de jogo dentro das universidades, algumas tinham o estilo mais do futebol normal enquanto outras se pareciam mais com o  rugby até a sua unificação.</p>
-                <br>
-                <br>
-                <p>No entanto o esporte foi se moldando com tempo, com regras constituídas pelo treinador Walter Camp que o futebol americano tomou-se sua personalidade.Ainda evoluindo para a história o futebol americano passou de ser um jogo de estudantes universitários, para ligas totalmente profissionais até que em 1966 duas ligas conhecidas como American Football League e National Football League se unificaram, mantendo o mesmo nome de uma das ligas conhecida como NFL.</p><br>
-                <img src="../IMGs/img_times .png" alt="img">
-                <p>A National Football League como citado é uma liga que consiste em 32 times divididos igualmente entre duas conferências chamadas National Football Conference (NFC) e American Football Conference (AFC), sendo ela uma das quatro grandes ligas esportivas e a mais lucrativa do mundo entre todas as ligas de todos os esportes.</p>
-                <br>
-                <br>
-                <p>A liga tem o seu calendário de jogos regulares em 18 semanas com cada time jogando dezessete partidas e tendo uma semana de folga, após o final dessa etapa 7 times de cada conferência disputam as fases finais conhecidas como playoffs e dentro destes playoffs temos a fases conhecidas como: Wild Card (oitavas de final na linguagem do futebol), Divisional Round (quartas de final), Final Conference (semifinal) e o Super Bowl que é um dos maiores eventos esportivos em termos de audiência, tendo em média 100 milhões de pessoas assistindo o evento.
-                </p>
-            </div>
+                <div id="contexto_Futebol">
+                    <div class="posicao_ataque" id="contexto_futebol">
 
+                        <h1 id="titulo_origem">A origem do Futebol Americano e NFL</h1>
 
-        </div>
+                        <p style="font-size: 30px;">
+                            O Futebol Americano nasceu em 1869 a partir de uma junção de estilos de jogo praticados em universidades nos Estados Unidos como uma unificação de vários estilos de jogo dentro das universidades, algumas tinham o estilo mais do futebol normal enquanto outras se pareciam mais com o  rugby até a sua unificação.
+                        </p>
 
-        <div class="campo">
-            <div class="total_campo">
+                        <p style="font-size: 30px;">No entanto o esporte foi se moldando com tempo, com regras constituídas pelo treinador Walter Camp que o futebol americano tomou-se sua personalidade.Ainda evoluindo para a história o futebol americano passou de ser um jogo de estudantes universitários, para ligas totalmente profissionais até que em 1966 duas ligas conhecidas como American Football League e National Football League se unificaram, mantendo o mesmo nome de uma das ligas conhecida como NFL.
+                        </p>
 
-            </div>
-        </div>
+                        <img src="./assets/img_times .png" alt="">
 
+                        <p style="font-size: 30px;">
+                            A National Football League como citado é uma liga que consiste em 32 times divididos igualmente entre duas conferências chamadas National Football Conference (NFC) e American Football Conference (AFC), sendo ela uma das quatro grandes ligas esportivas e a mais lucrativa do mundo entre todas as ligas de todos os esportes.
+                        </p>
 
-        <div class="tempo">
-            <div class="total_campo">
-                <div>
-                    <h1>O Campo</h1>
+                        <p style="font-size: 30px;">
+                            A liga tem o seu calendário de jogos regulares em 18 semanas com cada time jogando dezessete partidas e tendo uma semana de folga, após o final dessa etapa 7 times de cada conferência disputam as fases finais conhecidas como playoffs e dentro destes playoffs temos a fases conhecidas como: Wild Card (oitavas de final na linguagem do futebol), Divisional Round (quartas de final), Final Conference (semifinal) e o Super Bowl que é um dos maiores eventos esportivos em termos de audiência, tendo em média 100 milhões de pessoas assistindo o evento.
+
+                        </p>
+                    </div>
+                    
                 </div>
-            </div>
-        </div>
     </section>
+   <section class="regras">
+    <div class="o campo">
+        <div class="img"
+        <img src="" alt="">
+        </div>
+        <div class="texto_campo">
+
+        </div>
+    </div>
+    <div class="tempo">
+        <div class="img"
+        <img src="" alt="">
+        </div>
+        <div class="texto_tempo">
+            <p>Um campo de futebol americano tem 
+                120 jardas (109.7 metros) de comprimento 
+                e 53.3 jardas de largura (aproximadamento 48 metros),
+                a áreado jogo tem 100 jardas e cada entremidade possui uma  "end zone" com 10 jardas de comprimento
+                com um "Y" que serve para pontos extras
+            </p>
+        </div>
+    </div>
+
+    <div class="objetivo">
+        <div class="img">
+        <img src="" alt="">
+        </div>
+        <div class="texto_objetivo">
+            <p>O objetivo do Futebol Americano é mmarcar mais pontos que o adversário, seja levando a bola até a "endzone" do oponente ou acertando a bola entre o "Y" (field goal)</p>
+        </div>
+    </div>
+
+       <div class="inicio_jogo">
+        <div class="img">
+        <img src="" alt="">
+        </div>
+        <div class="texto_inicio">
+            
+        </div>
+    </div>
+
+
+    
+       <div class="inicio_ataque">
+        <div class="img">
+        <img src="" alt="">
+        </div>
+        <div class="texto_inicio">
+            
+        </div>
+    </div>
+
+
+           <div class="inicio_defesa">
+        <div class="img">
+        <img src="" alt="">
+        </div>
+        <div class="texto_inicio">
+            
+        </div>
+    </div>
+
+
+               <div class="inicio_pontuações">
+        <div class="img">
+        <img src="" alt="">
+        </div>
+        <div class="texto_inicio">
+            
+        </div>
+    </div>
+
+                   <div class="inicio_perdas ">
+        <div class="img">
+        <img src="" alt="">
+        </div>
+        <div class="texto_inicio">
+            
+        </div>
+    </div>
+   </section>
+
+   
+
+    <footer>
+        <div>
+            <ul>
+                <li>HOME</li>
+                <li>REGRAS</li>
+                <li>PAPÉIS</li>
+                <li>FORMAÇÕES</li>
+                <li>EQUIPAMENTOS</li>
+            </ul>
+        </div>
+        <h1>Know Footbal @ 2025</h1>
+    </footer>
+
+
+
 </body>
 
+
 </html>
+<script>
+
+        function mudarConteudoDoBotao () {
+  botao_contexto.innerText = '+'
+
+        } 
+    function setarTodosInvisiveis() {
+        contexto_Futebol.style.display = "none";
+        mudarConteudoDoBotao()
+    }
+
+
+
+    function mostrar_contexto() {
+            var botao = botao_contexto
+    var display = contexto_Futebol.style.display;
+    if (display == "none") {
+      setarTodosInvisiveis();
+    contexto_Futebol.style.display = "block";
+  
+    botao.innerText = '-'
+  } else {
+    contexto_Futebol.style.display = "none";
+   
+    botao.innerText = '+'
+  }
+
+    }
+</script>

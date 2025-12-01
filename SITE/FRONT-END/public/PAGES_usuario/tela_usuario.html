@@ -50,7 +50,7 @@
             </div>
             <div class="dashboard">
                 <div class="titulo">
-                    <h1 style="color: rgb(255, 140, 0);">SEU ACOMPANHAMENTO PARA UMA SELETIVA DE FUTEBOL AMERICANO:</h1>
+                    <h1 style="color: white;">SEU ACOMPANHAMENTO PARA UMA SELETIVA DE FUTEBOL AMERICANO:</h1>
                 </div>
                 <div class="card_dashboard">
                     <div class="titulo_dashboard">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="mensagens_usuario">
                     <div class="calculo">
-                        <p style="font-size: 10px;">CALCULO UTILIZADO PARA AS METRICAS: <span style="color: rgb(107, 255, 54);">PROJEÇÃO NOVO MÊS = MES_ANTERIOR -  (FREQUENCIA * TEMPO_MES ATUAL / 100)</span> </p>
+                        <p style="font-size: 10px;">CALCULO UTILIZADO PARA AS METRICAS: <span style="color: black">PROJEÇÃO NOVO MÊS = MES_ANTERIOR -  (FREQUENCIA * TEMPO_MES ATUAL / 100)</span> </p>
                     </div>
                     <br>
                     <div class="posição_calculo">
@@ -258,7 +258,7 @@ function editar_metrica_tiro40y() {
         var minimo_supino = 0
 
     function mostrar_posição_usuario() {
-
+        
 
         var peso = parseFloat(sessionStorage.PESO_USUARIO)
         var altura = parseFloat(sessionStorage.ALTURA_USUARIO)
@@ -537,7 +537,7 @@ function editar_metrica_tiro40y() {
             } else  if (ultimo_mes.metrica_tiro40y  < (tempo_minimo_40y + (tempo_minimo_40y * 0.30)) && ultimo_mes.metrica_tiro40y >= tempo_minimo_40y ) {
                                 KPI_2.innerHTML =  `                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
                             <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  yellow; color: black;">
-                                <p id="texto_kp2">BOA</p>`    
+                                <p id="texto_kp2">MEDIANA</p>`    
             } else {
                                                 KPI_2.innerHTML =  `                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
                             <div id="kpi_2"   class="KP2_FUTEBOL" style="background-color:  red; color: white;">

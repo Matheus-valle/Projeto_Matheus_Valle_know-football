@@ -29,6 +29,7 @@ formulario_time VARCHAR(200),
 categoria VARCHAR(45)
 ); 
 
+
 INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time, formulario_time, categoria) VALUES
 	('Time Manaus', 'Amazonas', 1, 'Manaus' ,'asdsalasdk', 'masculino'),
 	('Time Pará', 'Pará', 1, 'Belem' ,'asdsalasdk', 'feminino'),
@@ -42,6 +43,7 @@ INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time, formulario
 	('Time Curitiba', 'Parana', 5, 'Curitiba', 'asdasda', 'feminino');  
 
 SELECT * FROM TIMES WHERE região_time = 3;
+
 CREATE TABLE Usuario (
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome_usuario VARCHAR(45) NOT NULL, 
@@ -56,8 +58,6 @@ CREATE TABLE Usuario (
     frequencia_treino INT,
     metrica_tiro40y FLOAT,
 	metrica_3cones FLOAT,
-	metrica_shuttle_20 FLOAT,
-	metrica_shuttle_60 FLOAT,
 	metrica_supino INT
 );
 
@@ -65,11 +65,9 @@ CREATE TABLE Usuario (
 CREATE TABLE Metrica_atual (
 idMetrica INT AUTO_INCREMENT,
 fk_usuario INT,
-mes INT NOT NULL UNIQUE,  
+mes INT NOT NULL ,  
 metrica_tiro40y DECIMAL(3,2),
 metrica_3cones DECIMAL(4,2),
-metrica_shuttle_20 DECIMAL(4,2),
-metrica_shuttle_60 DECIMAL(4,2),
 metrica_supino INT,
 CONSTRAINT pks_metrica_fkusuario
 	PRIMARY KEY(idMetrica, fk_usuario),
@@ -80,28 +78,10 @@ CONSTRAINT unico_usuario_e_mes
 		UNIQUE (fk_usuario, mes)
 );
 
-SELECT * FROM Metrica_Atual  WHERE mes  IN(1,2,3,4,5,6);
 
-INSERT INTO Metrica_atual  (fk_usuario, mes, metrica_tiro40y, metrica_3cones, metrica_shuttle_20, metrica_shuttle_60, metrica_supino) VALUES
-	(4, 1, 5.90, 10.90, 20.90, 6.90, 2);
+
     
-INSERT INTO Metrica_atual  (fk_usuario, mes, metrica_tiro40y, metrica_3cones, metrica_shuttle_20, metrica_shuttle_60, metrica_supino) VALUES
-	(4, 2, 5.90, 10.90, 20.90, 6.90, 2),
-	(4, 3, 5.90, 10.90, 20.90, 6.90, 2),
-	(4, 4, 5.90, 10.90, 20.90, 6.90, 2);
-    
-SELECT m.mes ,m.metrica_tiro40y FROM Metrica_atual as m JOIN Usuario ON idUsuario = m.fk_usuario
-	WHERE idUsuario = 4 AND mes IN (1,2,3,4,5,6);
-    
-UPDATE Metrica_atual SET metrica_tiro40y = 6.00
-	WHERE fk_usuario = 4 and mes = 4;
-    
-INSERT INTO  Metrica_atual (metrica_tiro40y, mes, fk_usuario) VALUES
-	(8.0, 1, 4);
-    
-    
-SELECT metrica_tiro40y FROM Metrica_atual WHERE mes IN (1,2,3,4,5,6) AND fk_usuario = 3;
- SELECT mes, metrica_tiro40y FROM Metrica_atual WHERE mes IN (1,2,3,4,5,6) AND fk_usuario = 4;
+
  
 UPDATE Metrica_atual SET metrica_tiro40y = 10.0
 	WHERE fk_usuario = 4 and mes = 1;
@@ -184,4 +164,7 @@ SELECT * FROM Metrica_atual;
     WHERE fk_usuario = 1 AND mes = 2;
     
 SELECT * FROM Usuario;
+
+SELECT altura_usuario, peso_usuario FROM Usuario 
+ WHERE idUsuario = 1;
 

@@ -195,8 +195,9 @@ header img {
 .calculo {
     display: flex;
     justify-content: center;
+    color: black;
     align-items: center;
-    background-color: #324d5a;
+    background-color: #0B9FEB;
     height: 50px;
     font-size: 30px;
     border-radius: 15px;
@@ -212,7 +213,7 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #358948;
+    background-color: #2A7FE8;
     height: 30px;
     font-size: 25px;
     border-radius: 10px;

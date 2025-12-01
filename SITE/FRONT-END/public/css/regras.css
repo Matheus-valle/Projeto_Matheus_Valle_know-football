@@ -1,44 +1,53 @@
-.titulo {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100px;
-}
 
-.regras {
-    display: flex;
-    
-    margin-top: 80px;
-}
 
-.regras .card_contexto {
-    background-color: #0E2C61;
+.caixa_origem {
+    height: auto;
+}
+.posições {
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    color: white;
-    width: 60%;
-    height: 800px;
-    border-radius: 20px;
-    margin: 10px;
-    gap: 10px;
+    margin: 30px;
+    gap: 40px;
+    height: auto;
 
 }
 
-.card_contexto .historia_botão {
+
+
+.posições_ataque {
     display: flex;
-    justify-content: space-between;
-    align-items: space-between;
-    width: 100%;
-    background-color: blueviolet;
-    
+    flex-direction: column;
+    width: 850px;
+    height: 3000;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 7px;
+    background-color: #0E2C61;
+
 }
 
 
-.card_contexto .historia {
+#contexto_futebol {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 1600px;
+    width: 800px;
+    margin: 10px;
     background-color: white;
-    color: black;
     border-radius: 20px;
+    align-items: center;
+    padding: 10px;
+}
+
+.titulo_posições {
+ 
+    display: flex;
+    width: 850px;
+    justify-content: space-between;
+    color: white;
 }
