@@ -23,7 +23,6 @@ function autenticar(req, res) {
 
                         res.json({
                         idUsuario: resultadoAutenticar[0].idUsuario,
-
                         nome: resultadoAutenticar[0].nome_usuario,
                         senha: resultadoAutenticar[0].senha, 
                         regiao: resultadoAutenticar[0].região_usuario,  
@@ -62,11 +61,9 @@ function cadastrar(req, res) {
     var frequencia = req.body.frequenciaServer;
     var tiro40 = req.body.tiro40Server;
     var cone_3 = req.body.cone_3Server;
-    var shuttle_20 = req.body.shuttle_20Server;
-    var shuttle_60 = req.body.shuttle_60Server
     var repeticoes = req.body.repetiçõesServer;
     
-    console.log(nome, email, senha, regiao, altura, peso, frequencia, tiro40, cone_3, shuttle_20, shuttle_60, repeticoes)
+    console.log(nome, email, senha, regiao, altura, peso, frequencia, tiro40, cone_3, repeticoes)
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -78,7 +75,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, regiao, altura, peso, frequencia, tiro40, cone_3, shuttle_20, shuttle_60, repeticoes)
+        usuarioModel.cadastrar(nome, email, senha, regiao, altura, peso, frequencia, tiro40, cone_3, repeticoes)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -98,9 +95,6 @@ function cadastrar(req, res) {
 }
 
 
-function continuacao_cadastro(){
-       
-}
 
 module.exports = {
     autenticar,

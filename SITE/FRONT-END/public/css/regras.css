@@ -14,7 +14,9 @@
 
 }
 
-
+.regras {
+    height: 600px;
+}
 
 .posições_ataque {
     display: flex;

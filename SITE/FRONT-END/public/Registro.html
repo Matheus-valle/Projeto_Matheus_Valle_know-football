@@ -123,8 +123,6 @@
         var frequencia = Number(input_frequencia.value)
         var tiro40y = Number(input_40y.value)
         var cone_3 =  Number(input_3cone.value)
-        var shuttle_20 =  Number(input_shuttle_20.value)
-        var shuttle_60 = Number(input_shuttle_60.value)
         var repetições = Number(input_supino.value)
         var confirmar_senhha = input_confirmarSenha.value
         var mensagem = ""
@@ -165,13 +163,7 @@
             mensagem += `Drill 3 cones invalido <br>`
             contador_validações++ 
         }
-        if (shuttle_20 <= 0) {
-            mensagem += `Shuttle 20y errado <br>` 
-        }
 
-        if (shuttle_60 <= 0) {
-            mensagem += `Shuttle 60y errado <br>` 
-        }
 
         if (repetições < 0) {
             mensagem += `repetições supino invalido <br>` 
@@ -246,8 +238,6 @@
         frequenciaServer: frequencia,
         tiro40Server: tiro40y,
         cone_3Server: cone_3,
-        shuttle_20Server: shuttle_20,
-        shuttle_60Server: shuttle_60,
         repetiçõesServer: repetições
       }),
     })

@@ -103,6 +103,7 @@ header img {
     width: 1200px;
     display: flex;
     flex-direction: column;
+    gap: 30px;
     align-items: center;
     color: white;
 }

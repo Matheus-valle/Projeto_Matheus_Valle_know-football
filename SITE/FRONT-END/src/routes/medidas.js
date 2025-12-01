@@ -14,6 +14,10 @@ router.get("/MetricasCadastradas/:idUsuario", function (req, res) {
     medidaController.buscarMetricasCadastradas(req, res);
 })
 
+router.get("/buscarAltura/:idUsuario", function (req, res) {
+    medidaController.buscarAltura_peso(req, res);
+})
+
 router.post("/cadastrar_metrica", function (req, res) {
     medidaController.cadastrar_tiro40y(req, res);
    

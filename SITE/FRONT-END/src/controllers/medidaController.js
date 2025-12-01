@@ -1,17 +1,31 @@
 var medidaModel = require("../models/medidaModel");
 
-/* 
-function buscarAltura_peso(req,res) {
-    idUsuario = req.body.idUsuario
 
-    medidaModel.buscarAltura_peso(idUsuario).then(
+function buscarAltura_peso(req,res) {
+        var idUsuario = req.params.idUsuario;
+
+ medidaModel.buscarAltura_peso(idUsuario)
+                .then(
+                function (resultado) {
+                    res.json(resultado);
+                    
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+        
 
         
-    ) {
-        res.json(resultado)
-    }
+   
 }
-*/ 
+
 
 function cadastrar_tiro40y(req, res) {
 
@@ -125,6 +139,7 @@ module.exports = {
     buscarUltimasMetricas,
     buscarMetricasCadastradas,
     cadastrar_tiro40y,
-    editar_tiro40y
+    editar_tiro40y,
+    buscarAltura_peso
 
 }

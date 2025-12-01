@@ -25,7 +25,7 @@ function editarTiro40y(idUsuario, mes, tempo) {
 
 function buscarMetricasCadastradas(idUsuario) {
     var instrucaoSql = `
-    SELECT frequencia_treino, metrica_3cones, metrica_shuttle_20, metrica_shuttle_60, metrica_supino, metrica_tiro40y 
+    SELECT frequencia_treino, metrica_3cones,  metrica_supino, metrica_tiro40y 
 	FROM Usuario WHERE idUsuario = ${idUsuario}; ` 
 
 
