@@ -1,0 +1,35 @@
+.equipamentos {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.capacete {
+    background-color: #0E2C61;
+    width: 800px;
+    color: white;
+    height: 450px;
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capacete_titulo {
+   
+    width: 760px;
+}
+
+.div_dentro_capacete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    height: 400px;
+    width: 350px;
+}
+

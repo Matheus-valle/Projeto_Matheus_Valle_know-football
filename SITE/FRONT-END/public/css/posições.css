@@ -1,0 +1,194 @@
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.posições {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    gap: 40px;
+    height: auto;
+}
+
+.posições .caixa_posições {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.posições_ataque {
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 3000;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 7px;
+    color: white;
+    background-color: #0E2C61;
+
+}
+
+
+
+.posições_defesa {
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 3000;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 7px;
+    color: white;
+    background-color: #0E2C61;
+  
+
+}
+
+
+.posições_especiais {
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 3000;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 7px;
+    color: white;
+    background-color: #0E2C61;
+
+}
+
+
+.texto_e_botao_ataque {
+    width: 770px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px;
+}
+
+.texto_e_botao_defesa {
+    width: 770px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px;
+}
+
+
+.texto_e_botao_especiais {
+    width: 770px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px;
+}
+
+
+.caixa_jogador {
+    display: flex;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    height: 170px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    
+}
+
+.caixa_jogador img {
+    width: 180px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.caixa_texto_qb h1{
+    font-size: 40px;
+
+}
+
+.caixa_texto_qb p {
+    font-size: 15px;
+}
+
+.posicao_ataque {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 1100px;
+    margin: 10px;
+}
+
+.posicao_defesa {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 700px;
+    margin: 10px;
+}
+
+.posicao_especiais {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 1100px;
+    margin: 10px;
+}
+
+
+.caixa_texto_wr h1{
+    font-size: 40px;
+
+}
+
+.caixa_texto_wr p {
+    font-size: 15px;
+}
+
+.ir_para_taticas {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ir_para_taticas img{
+    height: 300px;
+    width: 300px;
+    
+}
+
+.texto_botao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto_botao button {
+       background-color: #FBD800;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(5, 4, 4);
+    font-size: 20px;
+    border-radius: 15px;
+    font-family: "Lilita One", sans-serif;
+    border: none;
+}

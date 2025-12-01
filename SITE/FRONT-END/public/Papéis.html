@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/posições.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/bola_icon.png" type="image/x-icon">
     <title>Papéis</title>
 </head>
-<body>
+
+<body onload="setarTodosInvisiveis()">
     <header>
-        <img src="../IMGs/LOGO.png" alt="img" class="logo">
+        <img src="./assets/LOGO-removebg-preview.png" alt="img" class="logo">
         <div class="header_textos">
             <ul>
                 <li><a href="index.html">HOME</a></li>
@@ -22,12 +25,285 @@
                 <li><a href="Equipamentos.html">EQUIPAMENTOS</a></li>
             </ul>
             <div class="botão_login_registro">
-               <a  style="color: white; font-size: 20px; align-items: center;" href="./Login.html">LOGIN</a>
+                <a style="color: white; font-size: 20px; align-items: center;" href="./Login.html">LOGIN</a>
             </div>
             <div class="botão_login_registro">
-               <a  style="color: white; font-size: 20px; align-items: center;" href="./Registro.html">REGISTRO</a>
+                <a style="color: white; font-size: 20px; align-items: center;" href="./Registro.html">REGISTRO</a>
             </div>
     </header>
-    
+    <section class="posições">
+        <h1>As Posições do Futebol Americano</h1>
+
+        <div class="caixa_posições">
+            <div class="posições_ataque" id="posições_ataque">
+                <div class="texto_e_botao_ataque" id="respota_ataque">
+                <h1>Posições de Ataque</h1>
+                <h1 onclick="mostrar_ataque()" id="botao_ataque">+</h1>
+                </div>
+                <div class="posicao_ataque" id="jogadores_ataque">
+                    <div class="caixa_jogador">
+                        <img src="./assets/quarterback_icon.jpeg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>QuarterBack</h1>
+                            <br>
+                            <p>Sigla QB</p><br>
+                            <p>Sua função:<br> O quarterback é o lider do ataque e ele é responsável por comandar as jogadas, ler a defesa e decidir se vai passar, correr ou entregar a bola para outro jogador.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="caixa_jogador">
+                        <img src="./assets/widereceiver_icon.jpg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Wide Receiver</h1>
+                            <br> 
+                            <p>Sigla WR</p><br>
+                            <p>Sua função <br>É receber passes do quarterback, posicionando-se nas laterais da linha ofensiva, onde nos inicios de jogadas corres através de rotas para conseguir ser um ponto livre para leitura</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="caixa_jogador">
+                        <img src="./assets/runningback_icon.jpg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Running back</h1>
+                            <br>
+                            <p>Sigla RB</p>
+                            <br>
+                            <p>Sua função: <br>É realizar corridas com a bola, mas ele também atua como receber e bloqueador sendo fundamental no ataque para ganhos terrestres</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="caixa_jogador">
+                        <img src="./assets/tightend_icon.jpg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Tight end</h1><br> 
+                            <p>Sigla TE</p><br> 
+                            <p>Sua função: <br>É ser um jogador híbrido com responsabilidade de um bloqueador e de um recebedor, onde pode participar de multiplas jogadas em várias partes do campo</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br> 
+                    <div class="caixa_jogador">
+                        <img src="./assets/ofensivelineman_icon.jpeg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Offensive Lineman</h1>
+                            <br>
+                            <p>Sigla OL</p><br> 
+                            <p>Sua função <br>É essencialmente protegor o quarterback e abrir caminhos  para o running back correr, sua posição por mais pouco reconhecida tem um papel importante no jogo </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+           
+            <div class="posições_defesa" id="posições_defesa">
+                <div class="texto_e_botao_defesa" id="respota_defesa">
+                <h1>Posições de Defesa</h1>
+                <h1 onclick="mostrar_defesa()" id="botao_defesa">+</h1>
+                </div>
+                <div class="posicao_defesa" id="jogadores_defesa">
+                    <div class="caixa_jogador">
+                        <img src="./assets/cornerback_icon.jpg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Corner Back</h1>
+                            <br>
+                            <p>Sigla CB</p><br>
+                            <p>Sua função:<br>É defender o passe do ataque asdversário, marcando os recebedores para impedir que eles façam recepções</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="caixa_jogador">
+                        <img src="./assets/defensivelineman_icon.jpeg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Defensive Lineman</h1>
+                            <br>
+                            <p>Sigla DL</p>
+                            <br>
+                            <p>Sua função: <br>É impedir o avanço do ataque adversário tanto em jogadas de passe pressionando o quarteback, quanto as jogadas de corrida</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="caixa_jogador">
+                        <img src="./assets/linebacker_icon.jpeg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Linebacker</h1>
+                            <br>
+                            <p>Sigla LB</p>
+                            <br>
+                            <p>Sua função: <br>É atuar como um "quarteback" defensivo, defendendo corrida e o passe adversário, sendo ele o lider da linha defensiva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="posições_especiais" id="posições_especiais">
+                <div class="texto_e_botao_especiais" id="respota_especiais">
+                <h1>Posições de Times especiais</h1>
+                <h1 onclick="mostrar_especial()" id="botao_especial">+</h1>
+                </div>
+                <div class="posicao_especiais" id="jogadores_especiais">
+                    <div class="caixa_jogador">
+                        <img src="./assets/kicker_icon.jpeg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Kicker</h1>
+                            <br>
+                            <p>Sigla K</p><br>
+                            <p>Sua função:<br>O kicker tem a responsabilidade de iniciar o jogo e chutar para garantir pontos extras a equipe .</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="caixa_jogador">
+                        <img src="./assets/punter_icon.jpg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Punter</h1>
+                            <br>
+                            <p>Sigla P</p>
+                            <br>
+                            <p>Sua função: <br>O Punter tem a responsabilidade de devolver a bola para o ataque diversario, com um chute para definir onde o ataque do adversario vai começar no campo.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="caixa_jogador">
+                        <img src="./assets/holder_icon.jpg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Holder</h1>
+                            <br>
+                            <p>Sigla H</p>
+                            <br>
+                            <p>Sua função: <br>O Holder tem a responsabilidade de segurar  a bola na melhor posição possivel, ele atua em jogadas tanto do kicker e punter </p>
+                        </div>
+                   
+                    </div>
+                    <br>
+                    <br>
+                                        <div class="caixa_jogador">
+                        <img src="./assets/long_snaper.jpg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Long Snapper</h1>
+                            <br>
+                            <p>Sigla LS</p>
+                            <br>
+                            <p>Sua função: <br>O Long Snapper tem a responsabilidade de fazer o snap (movimento de passar a bola entre as pernas) o mais longe o possivel para ou o Punter em jogadas de punt ou para o Holder em jogadas de chute</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                                        <div class="caixa_jogador">
+                        <img src="./assets/retornador_icon.jpeg" alt="">
+                        <div class="caixa_texto_qb">
+                            <h1>Retornadores</h1>
+                            <br>
+                            <p>Sigla HR</p>
+                            <br>
+                            <p>Sua função: <br>O retornador tem a responsabilidade de retornar correndo e ganhar espaço nos momentos que o time adversario devolve a bola para o time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            
+        </div>
+    </section>
+    <section class="ir_para_taticas">
+        <img src="./assets/taticas_icon.png" alt="">
+        <div class="texto_botao">
+            <h1>Agora que você aprendeu sobre as posições </h1>
+                <h1> clique aqui para aprender sobre as táticas </h1> <br><br>
+                
+                                <button>Táticas</button>
+        </div>
+
+    </section>
+
+     <footer>
+        <div>    
+            <ul>
+                <li>HOME</li>
+                <li>REGRAS</li>
+                <li>PAPÉIS</li>
+                <li>FORMAÇÕES</li>
+                <li>EQUIPAMENTOS</li>
+            </ul>
+        </div>
+        <h1>Know Footbal @ 2025</h1>
+    </footer>
+
 </body>
+
 </html>
+
+<script>
+    function mudarConteudoDoBotao () {
+  botao_ataque.innerText = '+'
+  botao_defesa.innerText = '+'
+  botao_especial.innerText = '+'
+
+}
+
+
+function setarTodosInvisiveis() {
+  jogadores_ataque.style.display = "none";
+  jogadores_defesa.style.display = "none";
+  jogadores_especiais.style.display = "none";
+
+
+  mudarConteudoDoBotao()
+}
+
+setarTodosInvisiveis() 
+
+function mostrar_ataque() {
+    var botao = botao_ataque
+    var display = jogadores_ataque.style.display;
+    if (display == "none") {
+      setarTodosInvisiveis();
+    jogadores_ataque.style.display = "block";
+  
+    botao.innerText = '-'
+  } else {
+    jogadores_ataque.style.display = "none";
+   
+    botao.innerText = '+'
+  }
+}
+
+
+function mostrar_defesa() {
+    var botao = botao_defesa
+    var display = jogadores_defesa.style.display;
+    if (display == "none") {
+      setarTodosInvisiveis();
+    jogadores_defesa.style.display = "block";
+  
+    botao.innerText = '-'
+  } else {
+    jogadores_defesa.style.display = "none";
+   
+    botao.innerText = '+'
+  }
+}
+
+function mostrar_especial() {
+        var botao = botao_especial
+    var display = jogadores_especiais.style.display;
+    if (display == "none") {
+      setarTodosInvisiveis();
+    jogadores_especiais.style.display = "block";
+  
+    botao.innerText = '-'
+  } else {
+    jogadores_especiais.style.display = "none";
+   
+    botao.innerText = '+'
+  }
+}
+
+</script>
