@@ -15,7 +15,7 @@
 
 <body onload="
    obterDadosGraficoMetricasCadastradas();
-    mostrar_posição_usuario(); 
+    mostrar_posição_usuario();
     ">
     <header>
         <div class="logo">
@@ -123,153 +123,9 @@
                         </div>
                     </div>
                 </div>
-                                <div class="card_dashboard">
-                    <div class="titulo_dashboard">
-                        <h1 style="font-size: 20px;">Repetições Supino 100Kg</h1>
-                    </div>
-                    <div class="mensagens_usuario">
-                    <div class="calculo">
-                        <p style="font-size: 10px;">CALCULO UTILIZADO PARA AS METRICAS: <span style="color: black">PROJEÇÃO NOVO MÊS = MES_ANTERIOR -  (FREQUENCIA * TEMPO_MES ATUAL / 100)</span> </p>
-                    </div>
-                    <br>
-                    <div class="posição_calculo">
-                        <p style="font-size: 13px;">PARA SUA POSIÇÃO <span style="color: rgb(0, 0, 0);"   id="posição_card"></span> O IDEAL PARA UM INICIANTE É <span style="color: rgb(0, 0, 0);" id="tiro_40y_card"></span></p>
-                    </div>
-                    </div>
+                                
 
-
-                    <div class="KPIS">
-                        <div class="KPI_1" id="KPI_3">
-                            <p style="font-size: 10px;">TAXA DE AUMENTO DE REPETIÇÕES MENSAL</p>
-                            <div class="KP1_TEMPO" style=" background-color:  rgb(255, 255, 255); color: black;">
-                                <p>NDA</p>
-                            </div>
-                        </div>
-                        <div class="KPI_2" id="KPI_4">
-                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
-                            <div id="kpi_2"   class="KP2_FUTEBOL" style=" background-color:  rgb(255, 255, 255); color: black;">
-                                <p id="texto_kp2">NDA</p>
-                            </div>
-                        </div>
-                        <div class="KPI_3" id="KPI_5">
-                            <p style="font-size: 10px;">GANHO DE REPETIÇÕES TOTAL</p>
-                            <div class="KP3_GANHO"   style=" background-color:  rgb(255, 255, 255); color: black;">
-                                <p>NDA </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <canvas id="myChart2"></canvas>
-                    </div>
-
-                    <div class="registros">
-                        <div class="inputs">
-                            <div class="input1">
-                                <p>SELECIONE O MÊS:</p>
-                                <select id="Input_mes">
-                                    <option value=1>1</option>
-                                    <option value=2>2</option>
-                                    <option value=3>3</option>
-                                    <option value=4>4</option>
-                                    <option value=5>5</option>
-                                    <option value=6>6</option>
-                                </select>
-                            </div>
-                            <div class="input2">
-                                <p>DIGITE AS REPETIÇÕES</p>
-                                <input type="number" id="input_repetição">
-                            </div>
-                        </div>
-                        <div class="botões_registro">
-                            <div class="botão01">
-                                <p>CADASTRAR:</p>
-                                <button onclick="cadastrar_supino()">CADASTRO</button>
-                            </div>
-                            <div class="input2">
-                                <p>EDITAR:</p>
-                                <button onclick="editar_metrica_supino()">EDITAR</button>
-                            </div>
-                            <div id="div_erro"></div>
-                        </div>
-                    </div>
-                </div>
-                                <div class="card_dashboard">
-                    <div class="titulo_dashboard">
-                        <h1 style="font-size: 20px;">Exercicio 3_Cones</h1>
-                    </div>
-                    <div class="mensagens_usuario">
-                    <div class="calculo">
-                        <p style="font-size: 10px;">CALCULO UTILIZADO PARA AS METRICAS: <span style="color: black">PROJEÇÃO NOVO MÊS = MES_ANTERIOR -  (FREQUENCIA * TEMPO_MES ATUAL / 100)</span> </p>
-                    </div>
-                    <br>
-                    <div class="posição_calculo">
-                        <p style="font-size: 13px;">PARA SUA POSIÇÃO <span style="color: rgb(0, 0, 0);"   id="posição_card"></span> O IDEAL PARA UM INICIANTE É <span style="color: rgb(0, 0, 0);" id="tiro_40y_card"></span></p>
-                    </div>
-                    </div>
-
-
-                    <div class="KPIS">
-                        <div class="KPI_1" id="KPI_1">
-                            <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
-                            <div class="KP1_TEMPO" style=" background-color:  rgb(255, 255, 255); color: black;">
-                                <p>NDA</p>
-                            </div>
-                        </div>
-                        <div class="KPI_2" id="KPI_2">
-                            <p style="font-size: 10px;">EVOULUÇÃO PARA O FUTEBOL AMERICANO</p>
-                            <div id="kpi_2"   class="KP2_FUTEBOL" style=" background-color:  rgb(255, 255, 255); color: black;">
-                                <p id="texto_kp2">NDA</p>
-                            </div>
-                        </div>
-                        <div class="KPI_3" id="KPI_3">
-                            <p style="font-size: 10px;">GANHO DE TEMPO TOTAL</p>
-                            <div class="KP3_GANHO"   style=" background-color:  rgb(255, 255, 255); color: black;">
-                                <p>NDA </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <canvas id="myChart3"></canvas>
-                    </div>
-
-                    <div class="registros">
-                        <div class="inputs">
-                            <div class="input1">
-                                <p>SELECIONE O MÊS:</p>
-                                <select id="Input_mes">
-                                    <option value=1>1</option>
-                                    <option value=2>2</option>
-                                    <option value=3>3</option>
-                                    <option value=4>4</option>
-                                    <option value=5>5</option>
-                                    <option value=6>6</option>
-                                </select>
-                            </div>
-                            <div class="input2">
-                                <p>DIGITE O TEMPO:</p>
-                                <input type="number" id="input_tempo">
-                            </div>
-                        </div>
-                        <div class="botões_registro">
-                            <div class="botão01">
-                                <p>CADASTRAR:</p>
-                                <button onclick="cadastrar_metrica_tiro40y()">CADASTRO</button>
-                            </div>
-                            <div class="input2">
-                                <p>EDITAR:</p>
-                                <button onclick="editar_metrica_tiro40y()">EDITAR</button>
-                            </div>
-                            <div id="div_erro"></div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <br>
-
-            
-      
+              
     </div>
 
     
@@ -278,7 +134,7 @@
 </html>
 
 <script>
-
+    
     
 
     mensagem_usuario.innerHTML = `<h1>OLÁ ${sessionStorage.NOME_USUARIO}</h1>`
@@ -290,6 +146,7 @@
 
 
     function cadastrar_metrica_tiro40y() {
+        console.log("botao apertado")
 
           var idUsuario = sessionStorage.ID_USUARIO
        var mes =  Number(Input_mes.value)
@@ -395,7 +252,9 @@ function editar_metrica_tiro40y() {
     return false;
     }
 }
-            var  tempo_minimo_40y = 0
+
+var  tempo_minimo_40y =  type(int)
+        
         var minimo_cone3 = 0
 
         var minimo_supino = 0
@@ -416,7 +275,7 @@ function editar_metrica_tiro40y() {
                         resposta.reverse();
 
                         console.log(resposta)
-
+                        
                        var peso = resposta[0].peso_usuario
                        var altura = parseFloat(resposta[0].altura_usuario)
                        var img = ""
@@ -427,54 +286,45 @@ function editar_metrica_tiro40y() {
             posição = `Running Back`
             img = `<img src="../assets/runningback_icon.jpg">`
             tempo_minimo_40y = 4.32 + (4.32 * 0.30 )
-            minimo_cone3 = 6.90 + (6.90 * 0.30)
-            minimo_supino = 13 - (13 * 0.80)
+
 
             if (peso > 75 && altura > 1.75) {
                 posição = `Corner Back`
                 img = `<img src="../assets/cornerback_icon.jpg">`
                 tempo_minimo_40y = 4.59+ (4.59 * 0.30 )
-                minimo_cone3 = 6.71 + (6.71 * 0.30)
-                minimo_supino = 12 - (12 * 0.80)
+
 
                 if (peso > 80 && altura > 1.80) {
                     posição = `Wide Receiver`
                     img = `<img src="../assets/widereceiver_icon.jpg">`
                 tempo_minimo_40y = 4.50+ (4.50 * 0.30 )
-                minimo_cone3 = 6.65 + (6.65 * 0.30)
-                minimo_supino = 11 - (11 * 0.80)
+
                    
                     if (peso > 100 && altura > 1.82) {
                         posição = `Linebacker`
                         img = `<img src="../assets/linebacker_icon.jpeg">`
                 tempo_minimo_40y = 4.60+ (4.60 * 0.30 )
-                minimo_cone3 = 6.65 + (6.65 * 0.30)
-                minimo_supino = 11 - (11 * 0.80)
+
                         if (peso > 104 && altura > 1.83) {
                             posição = `Quarter back`
                             img = `<img src="../assets/quarterback_icon.jpeg">`
                 tempo_minimo_40y = 4.60+ (4.60 * 0.30 )
-                minimo_cone3 = 6.65 + (6.65 * 0.30)
-                minimo_supino = 11 - (11 * 0.80)
+
                             if (peso > 106 && altura > 1.85) {
                                 posição = `Tight end`
                                 img = `<img src="../assets/tightend_icon.jpg">`
                                                 tempo_minimo_40y = 4.70+ (4.70 * 0.30 )
-                                                 minimo_cone3 = 7.21 + (7.21 * 0.30)
-                                              minimo_supino = 16 - (16 * 0.80)
+
                                 if (peso > 115 && altura > 1.87) {
                                     posição = `Defensive Lineman`
                                     img = `<img src="../assets/defensivelineman_icon.jpeg">`
                                                     tempo_minimo_40y = 4.83+ (4.83 * 0.30 )
-                                                 minimo_cone3 = 7.18 + ( 7.18* 0.30)
 
-                                             minimo_supino = 20 - (20 * 0.90)
                                     if (peso > 125 && altura > 1.90) {
                                         posição = `Offensive Lineman`
                                         img = `<img src="../assets/ofensivelineman_icon.jpeg">`
                                                         tempo_minimo_40y = 4.91+ (4.91 * 0.30 )
-                minimo_cone3 = 7.38 + (7.38 * 0.30)
-                minimo_supino = 23 - (23 * 0.30)
+
 
                                     }
                                 }
@@ -708,7 +558,8 @@ function editar_metrica_tiro40y() {
             }
 
             var calculo_evolução = parseFloat(penultimo_mes.metrica_tiro40y) -  parseFloat(ultimo_mes.metrica_tiro40y)
-            console.log(calculo_evolução)
+            
+            console.log("esté é o calculo de evolução "  + calculo_evolução)
             if (calculo_evolução > 0.3) {
                 KPI_1.innerHTML = `
                                             <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
@@ -732,34 +583,35 @@ function editar_metrica_tiro40y() {
                    
             }
 
-          
-        
+    
 
-            var evolução_total =   ultimo_mes.metrica_tiro40y - parseFloat( resposta_metricas.metrica_tiro40y) 
-            console.log("evolucao total é" +evolução_total)
+          console.log( typeof(  ultimo_mes.metrica_tiro40y))
+          var ultimo_mes_metrica_40y = parseFloat(ultimo_mes.metrica_tiro40y)
+            var evolução_total =    resposta_metricas.metrica_tiro40y  - ultimo_mes_metrica_40y  
+            console.log("está é a evolução total: " + evolução_total)
 
-             if (evolução_total > -0.3) {
+             if (evolução_total < 0.3) {
                                 KPI_3.innerHTML = `
                                             <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
-                            <div class="KP1_TEMPO" style=" background-color:  red; color: white;">
-                                <p>${calculo_evolução.toFixed(1)}!</p> `
+                            <div class="KP3_GANHO" style=" background-color:  red; color: white;">
+                                <p>${evolução_total.toFixed(1)}!</p> `
             }
-            else if (evolução_total > -0.6) {
+            else if (evolução_total <  0.6) {
                 KPI_3.innerHTML = `
                                             <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
-                            <div class="KP1_TEMPO" style=" background-color:  red; color: white;">
-                                <p>${calculo_evolução.toFixed(1)}!</p> `
+                            <div class="KP3_GANHO" style=" background-color:  yellow; color: white;">
+                                <p>${evolução_total.toFixed(1)}</p> `
                 
             } else {
                                 KPI_3.innerHTML = `
                                                                             <p style="font-size: 10px;">TAXA DE REDUÇÃO DE TEMPO MENSAL</p>
-                            <div class="KP1_TEMPO" style=" background-color:  red; color: white;">
-                                <p>${calculo_evolução.toFixed(1)}!</p> ` 
+                            <div class="KP3_GANHO" style=" background-color:  green; color: white; width ">
+                                <p>${evolução_total.toFixed(1)}</p> ` 
            
                    
             }
 
-            console.log(ultimo_mes)
+           
                         
                     });
                 } else {
@@ -772,7 +624,7 @@ function editar_metrica_tiro40y() {
 
 
 
-
+            
 
     }
 
@@ -794,7 +646,7 @@ function editar_metrica_tiro40y() {
         var metrica_cadastrado5 = parseFloat(resposta_acompanhamento5.metrica_tiro40y)
         var metrica_cadastrado6 = parseFloat(resposta_acompanhamento6.metrica_tiro40y)  
 
-      console.log(resposta_acompanhamento1)
+    
         
 
         var frequencia = resposta_metricas.frequencia_treino
@@ -805,11 +657,11 @@ function editar_metrica_tiro40y() {
         var mes4 = mes3 - (frequencia * mes3 / 100)
         var mes5 = mes4 - (frequencia * mes4 / 100)
         var mes7 = mes5 - (frequencia * mes5 / 100)
-        console.log('iniciando plotagem do gráfico...');
+       
 
         let labels = [];
 
-        console.log(mes0)
+       
     
         let dados = {
             labels: labels,
@@ -840,7 +692,7 @@ function editar_metrica_tiro40y() {
             data: dados,
         };
 
-        console.log(myChart)
+      
 
 
 
@@ -852,11 +704,6 @@ function editar_metrica_tiro40y() {
 
      
     }
-
-
-   
-
-
 
    
 </script>

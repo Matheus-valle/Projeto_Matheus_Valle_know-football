@@ -70,18 +70,12 @@
                 <br><br>
                 <div class="metricas"> 
                     <p>Nesta proxima parte precisamos que você tire  ou coloque</p> 
-                    <p> valores aproximados dos exercicios acima</p>
+                    <p> um valor aproximado do exercicio acima</p>
                 <br><br>
                 <p>Tiro de 40y (36 mêtros)</p>
                 <input type="number" id="input_40y">
                 <a href="https://www.youtube.com/watch?v=2svW4yIHvsk" target="_blank">CLIQUE AQUI PARA VER O EXERCICIO</a>
-                        <p>3-Cone Drill</p>
-                        <input type="number" id="input_3cone">
-                        <a href="https://www.youtube.com/watch?v=_KtUvR2zcNU" target="_blank">CLIQUE AQUI PARA VER O EXERCICIO</a>
-                                    
-                <p>Repetições Supino 100kg</p>
-                    <b style="color: rgb(230, 131, 131);">ATENÇÃO SE VOCÊ NUNCA FEZ UMA REPETIÇÃO COM ESTA CARGA COLOQUE COMO 0</b>
-                    <input type="number" id="input_supino">
+
                 </div>
                  <p>Senha</p>
         <input id="input_senha"  type="password"><br>
@@ -122,8 +116,7 @@
         var peso = Number(input_peso.value)
         var frequencia = Number(input_frequencia.value)
         var tiro40y = Number(input_40y.value)
-        var cone_3 =  Number(input_3cone.value)
-        var repetições = Number(input_supino.value)
+
         var confirmar_senhha = input_confirmarSenha.value
         var mensagem = ""
         var contador_validações = 0
@@ -159,15 +152,7 @@
             mensagem += `tiro de 40y invalido <br>` 
             contador_validações++
         }
-        if(cone_3 <= 0) {
-            mensagem += `Drill 3 cones invalido <br>`
-            contador_validações++ 
-        }
 
-
-        if (repetições < 0) {
-            mensagem += `repetições supino invalido <br>` 
-        }
 
         if (senha != confirmar_senhha) {
             mensagem += 'senha não conrresponde ao confirmar senha <br>' 
@@ -237,8 +222,7 @@
         pesoServer: peso, 
         frequenciaServer: frequencia,
         tiro40Server: tiro40y,
-        cone_3Server: cone_3,
-        repetiçõesServer: repetições
+
       }),
     })
       .then(function (resposta) {

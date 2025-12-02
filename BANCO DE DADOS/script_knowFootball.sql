@@ -1,7 +1,6 @@
 CREATE DATABASE football_db;
 USE football_db;
 
-
 CREATE TABLE Região (
 idRegião INT PRIMARY KEY AUTO_INCREMENT,
 nome_região  VARCHAR(45)
@@ -56,9 +55,7 @@ CREATE TABLE Usuario (
     altura_usuario DECIMAL(3,2),
     peso_usuario FLOAT,
     frequencia_treino INT,
-    metrica_tiro40y FLOAT,
-	metrica_3cones FLOAT,
-	metrica_supino INT
+    metrica_tiro40y FLOAT
 );
 
 
@@ -67,8 +64,6 @@ idMetrica INT AUTO_INCREMENT,
 fk_usuario INT,
 mes INT NOT NULL ,  
 metrica_tiro40y DECIMAL(3,2),
-metrica_3cones DECIMAL(4,2),
-metrica_supino INT,
 CONSTRAINT pks_metrica_fkusuario
 	PRIMARY KEY(idMetrica, fk_usuario),
 CONSTRAINT fk_usuario_metrica_atual
@@ -90,7 +85,7 @@ SELECT * FROM Metrica_atual WHERE fk_usuario = 4;
 
  SELECT mes, metrica_tiro40y FROM Metrica_atual WHERE mes IN (1,2,3,4,5,6) AND fk_usuario = 1;
 
-
+ SELECT idUsuario, nome_usuario, email_usuario, região_usuario FROM usuario WHERE email_usuario = 'matheus@gmail.com' AND senha_usuario = 'Wasabi#1234';
 SELECT mes, metrica_tiro40y FROM Metrica_atual WHERE mes IN (1,2,3,4,5,6) AND fk_usuario = 3;
     
 SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categoria FROM TIMES WHERE região_time = 3;
@@ -98,6 +93,9 @@ SELECT nome_time, estado_time, região_time, cidade_time, formulario_time, categ
 INSERT INTO TIMES (nome_time, estado_time, região_time, cidade_time,  formulario_time, categoria) VALUES
 	('Time fake A', 'Mato Grosso', 3, 'Cuiaba', 'sadasdasdasda',  'Masculino'),
 	('Time fake B', 'Mato Grosso do sul', 3, 'Campo grande', 'sadasdasdasda',  'Feminino');
+    
+    SELECT altura_usuario, peso_usuario FROM Usuario 
+ WHERE idUsuario = 1;
     
 SELECT * FROM Usuario;
 
@@ -162,9 +160,11 @@ SELECT * FROM Metrica_atual;
 
       UPDATE Metrica_atual SET metrica_tiro40y = 7.20
     WHERE fk_usuario = 1 AND mes = 2;
-    
+    SELECT idUsuario, nome_usuario, email_usuario FROM usuario WHERE email_usuario = 'matheus@gmail.com' AND senha_usuario = 'Wasabi#1234';
 SELECT * FROM Usuario;
 
 SELECT altura_usuario, peso_usuario FROM Usuario 
  WHERE idUsuario = 1;
+ 
+ 
 

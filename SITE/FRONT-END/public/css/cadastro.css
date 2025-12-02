@@ -8,7 +8,7 @@
 
 
 .cadastro {
-    height: 1650px;
+    height: 1350px;
     background-color: #232830;
     display: flex;
     flex-direction: column;
@@ -135,7 +135,7 @@
 .metricas {
     background-color: #4e6080;
     width: 700px;
-    height: 400px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
